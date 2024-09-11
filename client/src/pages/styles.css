@@ -1,0 +1,150 @@
+/* styles.css */
+body {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .navbar {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .concert-card {
+    background-color: #1c1c1c;
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .concert-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .concert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .concert-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 12px 0;
+  }
+  
+  .book-btn {
+    background-color: #ff0033;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-btn:hover {
+    background-color: #cc0029;
+  }
+  
+  .carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 20px;
+  }
+  /* ทำให้ navigation bar มีพื้นหลังสีดำและข้อความเป็นสีขาว */
+nav {
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* สไตล์สำหรับเมนูหลัก (Concert Booking) */
+  nav .text-2xl {
+    color: #fff;
+    font-size: 1.75rem;
+  }
+  
+  /* สไตล์สำหรับปุ่มต่างๆ (Login, Register, Profile, Logout) */
+  nav .btn {
+    color: #fff;
+    background-color: #ff0000; /* สีแดง */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav .btn:hover {
+    background-color: #cc0000; /* สีแดงเข้มเมื่อ hover */
+  }
+  
+  /* ปรับแต่งเมนู NavigationBar */
+  nav .navigation-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav .navigation-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  nav .navigation-bar a:hover {
+    color: #ff0000; /* สีแดงเมื่อ hover */
+    transition: color 0.3s ease;
+  }
+  
+  /* ปรับขนาดและจัดตำแหน่งของ container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* การจัดรูปแบบสำหรับเนื้อหาหลัก */
+  .container h1, .container p {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* ปรับแต่งปุ่มในหน้าอื่นๆ */
+  .button {
+    color: white;
+    background-color: #ff0000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #cc0000;
+  }
+  
+  /* ปรับแต่ง layout บนมือถือ */
+  @media (max-width: 768px) {
+    nav .navigation-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  

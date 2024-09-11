@@ -1,0 +1,95 @@
+/* styles.css */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #121212;
+  color: #fff;
+}
+
+.concert-card {
+  background-color: #1c1c1c;
+  color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.concert-card:hover {
+  transform: scale(1.05);
+}
+
+.concert-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.concert-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.book-btn {
+  background-color: #ff0033;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #cc0029;
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px;
+}
+/* ป๊อปอัพ Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);  /* สีพื้นหลังใส */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ป๊อปอัพ Content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* ปุ่มปิดป๊อปอัพ */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .close-button:hover {
+    background-color: darkred;
+  }
