@@ -21,7 +21,7 @@ const App = () => {
     if (token) {
       axios.get('/profile', { headers: { Authorization: `Bearer ${token}` } })
         .then(res => setUser(res.data))
-        .catch(() => localStorage.removeItem('token'));  
+        .catch(() => localStorage.removeItem('token'));
     }
   }, []);
 
@@ -41,7 +41,7 @@ const App = () => {
                 {/* เปิดป๊อปอัพ Login เมื่อกด */}
                 <button onClick={() => setShowLogin(true)} className="btn">Login</button>
                 {/* เปิดป๊อปอัพ Register เมื่อกด */}
-                <button onClick={() => setShowRegister(true)} className="btn">Register</button>
+                {/* <button onClick={() => setShowRegister(true)} className="btn">Register</button> */}
               </>
             ) : (
               <>

@@ -147,4 +147,121 @@ nav {
       text-align: center;
     }
   }
+  /* Login page styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.login-box {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-logo .logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.login-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab.active {
+  border-bottom: 2px solid #ff0033;
+}
+
+.login-inputs .login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.recaptcha-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #ff0033;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.or-section {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-button {
+  background-color: #3b5998;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.social-button.google {
+  background-color: #db4437;
+}
+
+.social-button.apple {
+  background-color: #000;
+}
+
+.register-section {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.register-button {
+  background: none;
+  border: none;
+  color: #ff0033;
+  font-size: 16px;
+  cursor: pointer;
+}
+
   
