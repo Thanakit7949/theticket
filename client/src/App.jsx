@@ -15,6 +15,7 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [showLogin, setShowLogin] = useState(false);  // State สำหรับควบคุมป๊อปอัพ Login
   const [showRegister, setShowRegister] = useState(false);  // State สำหรับควบคุมป๊อปอัพ Register
+  const [isPaused, setIsPaused] = useState(false);  // สถานะการหยุด marquee
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -30,18 +31,29 @@ const App = () => {
     setUser(null);
   };
 
+  // ฟังก์ชันที่ใช้เปลี่ยนสถานะการหยุด marquee เมื่อเม้าท์เข้าหรือออกจากข้อความ
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
+
   return (
     <Router>
       <div className="container mx-auto px-4 py-4">
+        {/* Scrolling Text */}
+        <div className="marquee-container" 
+             onMouseEnter={handleMouseEnter} 
+             onMouseLeave={handleMouseLeave}>
+          <p className="marquee-text" style={{ animationPlayState: isPaused ? 'paused' : 'running' }}>
+            Welcome to the INTERGETHER CONCERTS & SPORTS! Enjoy the best events and experiences.
+          </p>
+        </div>
+
         <nav className="flex justify-between items-center py-4">
-          <Link to="/" className="text-2xl font-bold">The Ticket</Link>
+          <Link to="/" className="text-2xl font-bold">INTERGETHER</Link>
           <div className="space-x-4">
             {!user ? (
               <>
                 {/* เปิดป๊อปอัพ Login เมื่อกด */}
                 <button onClick={() => setShowLogin(true)} className="btn">Login</button>
-                {/* เปิดป๊อปอัพ Register เมื่อกด */}
-                {/* <button onClick={() => setShowRegister(true)} className="btn">Register</button> */}
               </>
             ) : (
               <>

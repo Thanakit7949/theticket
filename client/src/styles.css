@@ -1,110 +1,156 @@
-/* styles.css */
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Body */
 body {
-  background-color: #000;
-  color: #fff;
+  background: linear-gradient(to right, #f2c1d1, #a8e0d6); /* โทนชมพูพาสเทลและสีฟ้าอมเขียว */
+  color: #333; /* สีตัวอักษรหลัก */
+  line-height: 1.6;
+  font-size: 16px;
 }
 
+/* Navbar */
 .navbar {
-  background-color: #121212;
+  background-color: #a8e0d6; /* ฟ้าอมเขียวอ่อน */
   color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* เพิ่มเงาอ่อนๆ */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 
+/* Concert Card */
 .concert-card {
-  background-color: #1c1c1c;
-  color: #fff;
-  border-radius: 12px;
+  width: 300px; /* Fixed width for consistency */
+  height: 400px; /* Fixed height to make all cards uniform */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 16px;
-  margin: 16px;
-  transition: transform 0.3s ease;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .concert-card:hover {
   transform: scale(1.05);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .concert-image {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 192px; /* Fixed height */
+  object-fit: cover; /* Maintain image aspect ratio */
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .concert-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  margin: 12px 0;
+  color: #ff79c6;
+  margin-bottom: 0.5rem;
 }
 
 .book-btn {
   background-color: #ff0033;
-  color: #fff;
+  color: white;
   padding: 12px 24px;
   border-radius: 8px;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .book-btn:hover {
   background-color: #cc0029;
+  transform: scale(1.05);
 }
 
+/* Carousel Container */
 .carousel-container {
   display: flex;
   overflow-x: auto;
   gap: 16px;
   padding: 20px;
+  scroll-behavior: smooth;
 }
-/* ป๊อปอัพ Overlay */
-/* Modal overlay styles */
+
+/* Modal (Pop-up) */
+/* กำหนดรูปแบบของ modal */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modal-content {
-  background-color: #1c1c1c;
-  border-radius: 12px;
+  background-color: white;
   padding: 20px;
-  width: 400px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
   position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
 }
 
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #ff0033;
+  background-color: #ff79c6;
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 50%;
+  font-size: 14px;
 }
 
 .close-button:hover {
-  background-color: #cc0029;
+  background-color: #ff4e92;
 }
 
+/* Login Form */
 .login-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #f2f2f2;
+  color: #333;
 }
 
 .login-button {
-  background-color: #ff0033;
+  background-color: #ff79c6;
   color: #fff;
   padding: 12px;
   width: 100%;
@@ -112,4 +158,51 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
+
+.login-button:hover {
+  background-color: #ff4e92;
+}
+
+/* Marquee Container */
+.marquee-container {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background-color: #ffb6c1; /* สีชมพูพาสเทลอ่อน */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.5);
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+/* Marquee Text */
+.marquee-text {
+  position: absolute;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  font-size: 38px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #ff79c6; /* สีชมพูอ่อน */
+  left: 100%;
+  text-shadow: 2px 2px 8px rgba(247, 45, 89, 0.3);
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
