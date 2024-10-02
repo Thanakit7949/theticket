@@ -9,6 +9,7 @@ import Booking from './pages/Booking';
 import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
 import NavigationBar from './pages/NavigationBar';
+import Concerts from './pages/Concerts';
 import './styles.css';
 
 const App = () => {
@@ -77,6 +78,7 @@ const App = () => {
         <div className="container mx-auto px-4 py-4">
           <Routes>
             <Route path="/" element={<ConcertList />} />
+            <Route path="/concerts" element={<Concerts />} />
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile user={user} />} />
