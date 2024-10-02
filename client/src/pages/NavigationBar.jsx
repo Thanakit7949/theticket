@@ -6,7 +6,6 @@ const NavigationBar = () => {
     <nav className="bg-black text-white flex justify-around p-4">
       <Link to="/" className="text-red-500 font-bold">หน้าหลัก</Link>
       <Link to="/concerts" className="hover:text-red-500">คอนเสิร์ต</Link>
-      <Link to="/notebooklub" className="hover:text-red-500">โน้ตคลับ</Link>
       <Link to="/artists" className="hover:text-red-500">ศิลปิน</Link>
       <Link to="/promotions" className="hover:text-red-500">โปรโมชั่น</Link>
       <Link to="/products" className="hover:text-red-500">สินค้า</Link>
