@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css'; // Import CSS file
+import './styless.css'; // Import CSS file
 import busImage from '../assets/bus.png';
 import got7Image from '../assets/got7.jpg';
 import nctImage from '../assets/nct.jpg';
