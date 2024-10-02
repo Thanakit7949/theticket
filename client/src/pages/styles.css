@@ -34,173 +34,7 @@ body {
     font-weight: bold;
     margin: 12px 0;
   }
-
-  /* concert  */
-.concerts-page {
-  background: linear-gradient(to bottom right, #f3e5f5, #e1bee7); /* ไล่สีม่วงพาสเทล */
-  min-height: 100vh; /* ให้พื้นหลังคลุมทั้งหน้า */
-  padding: 20px;
-  text-align: center;
-}
-
-/* คอนเสิร์ต วีดีโอ */
-.concerts-page {
-  text-align: center; /* จัดตำแหน่งให้ข้อความทั้งหมดอยู่กลาง */
-}
-
-.video-container {
-  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างวีดีโอกับข้อความ */
-}
-h4{
-  font-size: 18px;
-  color: black;
-}
-.concerts-page .video-description {
-  text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
-  font-size: 38px; /* ขนาดฟอนต์ */
-  font-weight: bold; /* ทำให้ฟอนต์หนา */
-  color: palevioletred;
-}
-
-.image-container {
-  text-align: center;
-  margin: 10px;
-  position: relative; /* ให้ container เป็น position relative */
-  overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
-}
-.image{
-  border-radius: 10px; /* มุมโค้ง */
-  width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-  max-width: 900px; /* กำหนดความกว้างสูงสุด */
-  height: 450px; /* กำหนดความสูง */
-}
-.image-gallery-navigation {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-button.prev {
-  left: 50px;
-  background-color: gray;
-  border-radius: 20px;
-}
-
-.nav-button.next {
-  right: 50px;
-  background-color: gray;
-  border-radius: 20px;
-}
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.video-container iframe {
-  border-radius: 10px; /* มุมโค้ง */
-  width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-  max-width: 900px; /* กำหนดความกว้างสูงสุด */
-  height: 450px; /* กำหนดความสูง */
-}
-
-.image-gallery {
-  display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
-  justify-content: center; /* จัดกลางรูปภาพ */
-  margin-top: 20px; /* ระยะห่างระหว่างข้อความและรูปภาพ */
-}
-
-.concerts-image {
-  width: 200px; /* ตั้งค่าความกว้างของรูปภาพ */
-  height: 150px; /* ตั้งค่าความสูงของรูปภาพ */
-  object-fit: cover; /* ครอบภาพเพื่อให้ไม่ผิดสัดส่วน */
-  border-radius: 8px; /* เพิ่มมุมโค้งให้กับรูปภาพ */
-  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการ hover */
-}
-
-.image-container:hover .concerts-image {
-  transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
-}
-.gif-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.gif-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gif-image {
-  max-width: 800%;
-  height: auto;
-}
-/* จัดสไตล์สำหรับหมวดหมู่ปุ่ม */
-.category-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px; /* เพิ่มช่องว่างระหว่างปุ่ม */
-  margin-top: 50px;
-}
-
-.category-button {
-  background-color: #000; /* สีพื้นหลังดำ */
-  color: white; /* สีตัวอักษรขาว */
-  padding: 10px 40px;
-  border: none;
-  border-radius: 20px; /* ทำให้ขอบมน */
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.category-button.selected {
-  background-color: palevioletred; /* สีแดงเมื่อเลือก */
-}
-
-.category-button:hover {
-  background-color: #333; /* สีเมื่อ hover */
-}
-.frames-row {
-  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกรอบในแนวนอน */
-  justify-content: space-between; /* จัดให้มีระยะห่างระหว่างกรอบ */
-  margin: 20px 0; /* ระยะห่างรอบกรอบ */
-}
-
-.frame-container {
-  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงรูปภาพและข้อความ */
-  align-items: center; /* จัดให้มีการจัดแนวในแนวตั้งอยู่กลาง */
-  border: 1px solid #ccc; /* ขอบกรอบ */
-  border-radius: 8px; /* มุมโค้งสำหรับกรอบ */
-  padding: 5px; /* ระยะห่างภายในกรอบ */
-  width: 45%; /* ความกว้างของกรอบ */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* เงาให้กับกรอบ */
-}
-
-.frame-image {
-  width: 80px; /* ความกว้างของรูปภาพ */
-  height: auto; /* ความสูงอัตโนมัติเพื่อรักษาสัดส่วน */
-  margin-right: 8px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
-  border-radius: 8px; /* มุมโค้งสำหรับรูปภาพ */
-}
-
-.frame-text {
-  font-size: 16px; /* ขนาดฟอนต์สำหรับข้อความ */
-  color: #333; /* สีข้อความ */
-  flex: 1; /* ให้ข้อความขยายให้เต็มพื้นที่ */
-}
-
-
+  
   .book-btn {
     background-color: #ff0033;
     color: #fff;
@@ -221,8 +55,8 @@ h4{
     padding: 20px;
   }
   /* ทำให้ navigation bar มีพื้นหลังสีดำและข้อความเป็นสีขาว */
-  nav {
-    background-color: #ff94ff;
+nav {
+    background-color: #000;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -238,7 +72,7 @@ h4{
   
   /* สไตล์สำหรับปุ่มต่างๆ (Login, Register, Profile, Logout) */
   nav .btn {
-    color: #ffffff;
+    color: #fff;
     background-color: #ff0000; /* สีแดง */
     padding: 8px 16px;
     border-radius: 4px;
@@ -302,28 +136,31 @@ h4{
     nav .navigation-bar {
       flex-direction: column;
       gap: 10px;
-    }
-  
-    .container {
+      
+  }
+
+  .container {
       padding: 10px;
-    }
-  
-    .btn {
+  }
+
+  .btn {
       width: 100%;
       text-align: center;
-    }
+      
   }
-  /* Login page styles */
+}
+
+/* Login Page Styles */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000;
+  background-color: #121212;
 }
 
 .login-box {
-  background-color: #1c1c1c;
+  background-color: #2a2a2a;
   border-radius: 12px;
   padding: 20px;
   width: 400px;
@@ -430,4 +267,24 @@ h4{
   cursor: pointer;
 }
 
-  
+/* เพิ่ม animation ให้กับปุ่มเมื่อ hover */
+.button:hover {
+  background-color: #cc0029;
+  box-shadow: 0 4px 15px rgba(204, 0, 41, 0.7);
+  transform: translateY(-3px); /* ทำให้ปุ่มยกขึ้นเล็กน้อยเมื่อ hover */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ทำให้ navbar เลื่อนเข้ามาจากด้านข้างเมื่อโหลดหน้า */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+nav {
+  animation: slideIn 0.5s ease-out;
+}
