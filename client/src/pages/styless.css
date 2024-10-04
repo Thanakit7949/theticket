@@ -1,160 +1,122 @@
-/* styles.css */
-body {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  .navbar {
-    background-color: #121212;
-    color: #fff;
-  }
-  
-  .concert-card {
-    background-color: #1c1c1c;
-    color: #fff;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 16px;
-    transition: transform 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .concert-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .concert-image {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
-  
-  .concert-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 12px 0;
-  }
+  /* CONCERT PAGE*/
 
-  /* concert  */
-.concerts-page {
+  h4{
+    font-size: 18px;
+    color: black;
+  }
+  .concerts-page {
   background: linear-gradient(to bottom right, #f3e5f5, #e1bee7); /* ไล่สีม่วงพาสเทล */
   min-height: 100vh; /* ให้พื้นหลังคลุมทั้งหน้า */
   padding: 20px;
   text-align: center;
-}
+  }
+  .concerts-page {
+    text-align: center; /* จัดตำแหน่งให้ข้อความทั้งหมดอยู่กลาง */
+  }
+  .concerts-page .video-description {
+    text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
+    font-size: 38px; /* ขนาดฟอนต์ */
+    font-weight: bold; /* ทำให้ฟอนต์หนา */
+    margin-top: 30px;
+    color: palevioletred;
+  }
+  .video-container {
+    margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างวีดีโอกับข้อความ */
+    margin-top: 30px;
+  }
+  .video-container iframe {
+    border-radius: 10px; /* มุมโค้ง */
+    width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
+    max-width: 900px; /* กำหนดความกว้างสูงสุด */
+    height: 450px; /* กำหนดความสูง */
+  }
+  .image-container {
+    text-align: center;
+    margin: 10px;
+    position: relative; /* ให้ container เป็น position relative */
+    overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
+  }
+  .image{
+    border-radius: 10px; /* มุมโค้ง */
+    width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
+    max-width: 900px; /* กำหนดความกว้างสูงสุด */
+    height: 450px; /* กำหนดความสูง */
+  }
+  .image-gallery-navigation {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-gallery {
+    display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
+    justify-content: center; /* จัดกลางรูปภาพ */
+    margin-top: 20px; /* ระยะห่างระหว่างข้อความและรูปภาพ */
+  }
+  
+  .concerts-image {
+    width: 190px; /* ตั้งค่าความกว้างของรูปภาพ */
+    height: 150px; /* ตั้งค่าความสูงของรูปภาพ */
+    object-fit: cover; /* ครอบภาพเพื่อให้ไม่ผิดสัดส่วน */
+    border-radius: 8px; /* เพิ่มมุมโค้งให้กับรูปภาพ */
+    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการ hover */
+  }
+  
+  .image-container:hover .concerts-image {
+    transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
+  }
+  .nav-button.prev {
+    left: 20px;
+    background-color: gray;
+    border-radius: 20px;
+  }
+  
+  .nav-button.next {
+    right: 20px;
+    background-color: gray;
+    border-radius: 20px;
+  }
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
 
-/* คอนเสิร์ต วีดีโอ */
-.concerts-page {
-  text-align: center; /* จัดตำแหน่งให้ข้อความทั้งหมดอยู่กลาง */
-}
-
-.video-container {
-  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างวีดีโอกับข้อความ */
-}
-h4{
-  font-size: 18px;
-  color: black;
-}
-.concerts-page .video-description {
-  text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
-  font-size: 38px; /* ขนาดฟอนต์ */
-  font-weight: bold; /* ทำให้ฟอนต์หนา */
-  color: palevioletred;
-}
-
-.image-container {
-  text-align: center;
-  margin: 10px;
-  position: relative; /* ให้ container เป็น position relative */
-  overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
-}
-.image{
-  border-radius: 10px; /* มุมโค้ง */
-  width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-  max-width: 900px; /* กำหนดความกว้างสูงสุด */
-  height: 450px; /* กำหนดความสูง */
-}
-.image-gallery-navigation {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-button.prev {
-  left: 50px;
-  background-color: gray;
-  border-radius: 20px;
-}
-
-.nav-button.next {
-  right: 50px;
-  background-color: gray;
-  border-radius: 20px;
-}
-.nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-.video-container iframe {
-  border-radius: 10px; /* มุมโค้ง */
-  width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-  max-width: 900px; /* กำหนดความกว้างสูงสุด */
-  height: 450px; /* กำหนดความสูง */
-}
-
-.image-gallery {
-  display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
-  justify-content: center; /* จัดกลางรูปภาพ */
-  margin-top: 20px; /* ระยะห่างระหว่างข้อความและรูปภาพ */
-}
-
-.concerts-image {
-  width: 200px; /* ตั้งค่าความกว้างของรูปภาพ */
-  height: 150px; /* ตั้งค่าความสูงของรูปภาพ */
-  object-fit: cover; /* ครอบภาพเพื่อให้ไม่ผิดสัดส่วน */
-  border-radius: 8px; /* เพิ่มมุมโค้งให้กับรูปภาพ */
-  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการ hover */
-}
-
-.image-container:hover .concerts-image {
-  transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
-}
-.gif-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.gif-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gif-image {
-  max-width: 800%;
-  height: auto;
-}
-/* จัดสไตล์สำหรับหมวดหมู่ปุ่ม */
+  .gif-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gif-image {
+    max-width: 800%;
+    height: auto;
+  }
+  /* จัดสไตล์สำหรับหมวดหมู่ปุ่ม */
 .category-buttons {
   display: flex;
   justify-content: center;
   gap: 12px; /* เพิ่มช่องว่างระหว่างปุ่ม */
   margin-top: 50px;
 }
-
 .category-button {
-  background-color: #000; /* สีพื้นหลังดำ */
-  color: white; /* สีตัวอักษรขาว */
+  /* สไตล์ทั่วไปของปุ่ม */
+  background-color: #f0f0f0; /* สีพื้นหลังปกติ */
+  color: #000; /* สีข้อความปกติ */
   padding: 10px 40px;
   border: none;
   border-radius: 20px; /* ทำให้ขอบมน */
@@ -164,270 +126,91 @@ h4{
   transition: background-color 0.3s ease;
 }
 
-.category-button.selected {
-  background-color: palevioletred; /* สีแดงเมื่อเลือก */
+.category-button.active {
+  background-color: palevioletred; /* สีพื้นหลังเมื่อเลือก */
+  color: white; /* สีข้อความเมื่อเลือก */
+  border: 1px solid palevioletred; /* ขอบเมื่อเลือก */
 }
 
-.category-button:hover {
-  background-color: #333; /* สีเมื่อ hover */
-}
 .frames-row {
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกรอบในแนวนอน */
-  justify-content: space-between; /* จัดให้มีระยะห่างระหว่างกรอบ */
-  margin: 20px 0; /* ระยะห่างรอบกรอบ */
+  justify-content: start; 
+  margin:30px 0 ; /* ระยะห่างรอบกรอบ */
+  flex-wrap: wrap; /* เพิ่มการห่อหุ้มกรอบเมื่อพื้นที่ไม่พอ */
 }
-
-.frame-container {
+.concert-frame {
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงรูปภาพและข้อความ */
   align-items: center; /* จัดให้มีการจัดแนวในแนวตั้งอยู่กลาง */
-  border: 1px solid #ccc; /* ขอบกรอบ */
+  border: 2px solid #ccc; /* ขอบกรอบ */
   border-radius: 8px; /* มุมโค้งสำหรับกรอบ */
-  padding: 5px; /* ระยะห่างภายในกรอบ */
-  width: 45%; /* ความกว้างของกรอบ */
+  padding: 10px; /* ระยะห่างภายในกรอบ */
+  width: 33%; /* ความกว้างของกรอบ (ปรับตามต้องการ) */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* เงาให้กับกรอบ */
+  margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
 }
 
 .frame-image {
-  width: 80px; /* ความกว้างของรูปภาพ */
+  width: 140px; /* ความกว้างของรูปภาพ */
   height: auto; /* ความสูงอัตโนมัติเพื่อรักษาสัดส่วน */
-  margin-right: 8px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
   border-radius: 8px; /* มุมโค้งสำหรับรูปภาพ */
+  margin-right: 10px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
+  height: 160px;
 }
-
 .frame-text {
-  font-size: 16px; /* ขนาดฟอนต์สำหรับข้อความ */
-  color: #333; /* สีข้อความ */
-  flex: 1; /* ให้ข้อความขยายให้เต็มพื้นที่ */
+  font-size: 12px; 
+  color: #333; 
+  margin-top: 5px; 
 }
 
+.title {
+    font-weight: bold; 
+    color: black !important; /* ใช้ !important หากต้องการบังคับให้เป็นไปตามนี้ */
+}
 
-  .book-btn {
-    background-color: #ff0033;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .book-btn:hover {
-    background-color: #cc0029;
-  }
-  
-  .carousel-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    padding: 20px;
-  }
-  /* ทำให้ navigation bar มีพื้นหลังสีดำและข้อความเป็นสีขาว */
-  nav {
-    background-color: #ff94ff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* สไตล์สำหรับเมนูหลัก (Concert Booking) */
-  nav .text-2xl {
-    color: #fff;
-    font-size: 1.75rem;
-  }
-  
-  /* สไตล์สำหรับปุ่มต่างๆ (Login, Register, Profile, Logout) */
-  nav .btn {
-    color: #ffffff;
-    background-color: #ff0000; /* สีแดง */
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
+.date-time {
+    color: rgb(7, 206, 7) !important;
     font-weight: bold;
-  }
-  
-  nav .btn:hover {
-    background-color: #cc0000; /* สีแดงเข้มเมื่อ hover */
-  }
-  
-  /* ปรับแต่งเมนู NavigationBar */
-  nav .navigation-bar {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  nav .navigation-bar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 10px;
-  }
-  
-  nav .navigation-bar a:hover {
-    color: #ff0000; /* สีแดงเมื่อ hover */
-    transition: color 0.3s ease;
-  }
-  
-  /* ปรับขนาดและจัดตำแหน่งของ container */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* การจัดรูปแบบสำหรับเนื้อหาหลัก */
-  .container h1, .container p {
-    text-align: center;
-    color: #333;
-  }
-  
-  /* ปรับแต่งปุ่มในหน้าอื่นๆ */
-  .button {
-    color: white;
-    background-color: #ff0000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+}
+
+.time {
+    color: rgb(0, 123, 255) !important; /* ใช้สีที่ต้องการ */
     font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #cc0000;
-  }
-  
-  /* ปรับแต่ง layout บนมือถือ */
-  @media (max-width: 768px) {
-    nav .navigation-bar {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .container {
-      padding: 10px;
-    }
-  
-    .btn {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  /* Login page styles */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #000;
 }
 
-.login-box {
-  background-color: #1c1c1c;
-  border-radius: 12px;
-  padding: 20px;
-  width: 400px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+.location {
+    color: blue !important; 
+    font-weight: bold;
 }
 
-.login-logo .logo {
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-  margin-bottom: 20px;
-}
-
-.login-tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.tab {
-  background: none;
+.buy-ticket-btn {
+  background-color: #ff3b30; /* สีพื้นหลังของปุ่ม */
+  color: white;
+  padding:5px 30px;
   border: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 10px 20px;
+  border-radius: 25px;
   cursor: pointer;
+  font-size: 15px;
+  margin-top: 10px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
+  align-self: flex-start; /* จัดปุ่มให้อยู่ด้านซ้าย */
 }
 
-.tab.active {
-  border-bottom: 2px solid #ff0033;
+.buy-ticket-btn:hover {
+  background-color: #e63946; /* เปลี่ยนสีเมื่อ hover */
 }
 
-.login-inputs .login-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #2a2a2a;
-  color: #fff;
+
+/* การจัดรูปแบบเพิ่มเติมสำหรับปุ่ม SOLD OUT */
+.sold-out-btn {
+  background-color: gray; /* สีเทาสำหรับ SOLD OUT */
+  cursor: not-allowed; /* เปลี่ยนเคอร์เซอร์เพื่อแสดงว่าไม่สามารถคลิกได้ */
+  opacity: 0.6; /* ทำให้โปร่งใสนิดหน่อย */
+  font-size: 15px;
+  border-radius: 25px;
+  
 }
 
-.recaptcha-box {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  color: #fff;
-}
+  
 
-.login-button {
-  background-color: #ff0033;
-  color: #fff;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
 
-.or-section {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.social-login {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.social-button {
-  background-color: #3b5998;
-  color: #fff;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.social-button.google {
-  background-color: #db4437;
-}
-
-.social-button.apple {
-  background-color: #000;
-}
-
-.register-section {
-  text-align: center;
-  margin-top: 20px;
-  color: #fff;
-}
-
-.register-button {
-  background: none;
-  border: none;
-  color: #ff0033;
-  font-size: 16px;
-  cursor: pointer;
-}
 
   

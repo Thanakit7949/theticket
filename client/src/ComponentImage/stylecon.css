@@ -1,0 +1,72 @@
+.bus-concert-container {
+    text-align: center; /* จัดข้อความและรูปภาพให้อยู่กึ่งกลาง */
+    margin: 20px;
+  }
+  
+  .bus-concert-image {
+    width: 100%; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: auto;
+  }
+  .bus-concert-image1 {
+    margin-top: 20px;
+    width: 550px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 650px;
+  }
+  .text-below-image {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.7rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #e40675); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-below-image1 {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.4rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #e40675); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ให้มี 4 รูปในแต่ละแถว */
+    gap: 10px; /* เพิ่มช่องว่างระหว่างรูป */
+    margin-top: 20px;
+  }
+  
+  .grid-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* เพิ่มขอบโค้งมนเล็กน้อย */
+  }
+  .got-concert-container{
+    text-align: center; /* จัดข้อความและรูปภาพให้อยู่กึ่งกลาง */
+    margin: 20px;
+  }
+  .got-concert-image {
+    width: 100%; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: auto;
+  }
+  .got-concert-image1 {
+    margin-top: 20px;
+    width: 750px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 500px;
+  }
+  
+  .text-got-image {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #06e475); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-got-image1 {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.2rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #06e475); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }

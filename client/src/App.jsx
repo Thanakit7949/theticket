@@ -10,6 +10,11 @@ import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
 import NavigationBar from './pages/NavigationBar';
 import Concerts from './pages/Concerts';
+import BusConcert from './ComponentImage/BusConcert';   
+import Got7Concert from './ComponentImage/Got7Concert';   
+import NctConcert from './ComponentImage/NctConcert';   
+import PixxiConcert from './ComponentImage/PixxiConcert';   
+import LyknConcert from './ComponentImage/LyknConcert';   
 import './styles.css';
 
 const App = () => {
@@ -91,6 +96,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<ConcertList />} />
             <Route path="/concerts" element={<Concerts />} />
+            <Route path="/busconcert" element={<BusConcert />} />
+            <Route path="/got7concert" element={<Got7Concert />} />
+            <Route path="/nctconcert" element={<NctConcert />} />
+            <Route path="/pixxiconcert" element={<PixxiConcert />} />
+            <Route path="/lyknconcert" element={<LyknConcert />} />
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile user={user} />} />
