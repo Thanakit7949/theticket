@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import ConcertList from './pages/ConcertList';
+import Products from './pages/Products';
 import Booking from './pages/Booking';
 import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
@@ -95,6 +96,7 @@ const App = () => {
         <div className="container mx-auto px-4 py-4">
           <Routes>
             <Route path="/" element={<ConcertList />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/concerts" element={<Concerts />} />
             <Route path="/busconcert" element={<BusConcert />} />
             <Route path="/got7concert" element={<Got7Concert />} />
