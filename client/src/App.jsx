@@ -11,11 +11,14 @@ import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
 import NavigationBar from './pages/NavigationBar';
 import Concerts from './pages/Concerts';
+import Sports from './pages/Sports';
 import BusConcert from './ComponentImage/BusConcert';   
 import Got7Concert from './ComponentImage/Got7Concert';   
 import NctConcert from './ComponentImage/NctConcert';   
 import PixxiConcert from './ComponentImage/PixxiConcert';   
-import LyknConcert from './ComponentImage/LyknConcert';   
+import LyknConcert from './ComponentImage/LyknConcert';  
+import BuyTicketSport from './pages/BuyTicketSport'; 
+import BuyTicketCon from './pages/BuyTicketCon'; 
 import './styles.css';
 
 const App = () => {
@@ -98,6 +101,9 @@ const App = () => {
             <Route path="/" element={<ConcertList />} />
             <Route path="/products" element={<Products />} />
             <Route path="/concerts" element={<Concerts />} />
+            <Route path="/sports" element={<Sports />} />
+            <Route path="/buy-ticketsport/:id" element={<BuyTicketSport />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรกีฬา */}
+            <Route path="/buy-ticketCon/:id" element={<BuyTicketCon />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรคอนเสิร์ต */}
             <Route path="/busconcert" element={<BusConcert />} />
             <Route path="/got7concert" element={<Got7Concert />} />
             <Route path="/nctconcert" element={<NctConcert />} />

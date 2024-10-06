@@ -5,7 +5,7 @@
     color: black;
   }
   .concerts-page {
-  background: linear-gradient(to bottom right, #f3e5f5, #e1bee7); /* ไล่สีม่วงพาสเทล */
+  background: linear-gradient(to bottom right, #f3e5f5, #e69af3); /* ไล่สีม่วงพาสเทล */
   min-height: 100vh; /* ให้พื้นหลังคลุมทั้งหน้า */
   padding: 20px;
   text-align: center;
@@ -35,19 +35,35 @@
     margin: 10px;
     position: relative; /* ให้ container เป็น position relative */
     overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
+    
   }
-  .image{
-    border-radius: 10px; /* มุมโค้ง */
-    width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-    max-width: 900px; /* กำหนดความกว้างสูงสุด */
-    height: 450px; /* กำหนดความสูง */
+  .black-text {
+    color: black !important;
+    font-weight: bold;
   }
-  .image-gallery-navigation {
+  
+  .image {
+    width: 90%; /* ทำให้รูปภาพกว้างเต็มพื้นที่ของคอนเทนเนอร์ */
+    max-width: 1500px; /* กำหนดความกว้างสูงสุด */
+    height: auto; /* ให้ความสูงปรับตามสัดส่วนของความกว้าง */
+    display: block; /* ทำให้รูปภาพเป็นบล็อกเพื่อให้ใช้พื้นที่ตามที่กำหนด */
+    object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ทั้งหมด */
+    border-radius: 10px; /* ขอบโค้งมนสำหรับรูปภาพ */
+    margin: 0 auto; /* จัดให้ภาพอยู่กึ่งกลางคอนเทนเนอร์ */
+  }
+  
+  .image-gallery-navigation1 {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .image-gallery-navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .image-gallery {
     display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
@@ -67,15 +83,31 @@
     transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
   }
   .nav-button.prev {
-    left: 20px;
+    position: absolute;
+    left: 0px;
     background-color: gray;
-    border-radius: 20px;
+    border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
+    width: 40px; /* ความกว้างของปุ่ม */
+    height: 40px; /* ความสูงของปุ่ม */
+    padding: 0; /* เอาการเว้นระยะในปุ่มออก */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .nav-button.next {
-    right: 20px;
+    position: absolute;
+    right: 5px;
     background-color: gray;
-    border-radius: 20px;
+    border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
+    width: 40px; /* ความกว้างของปุ่ม */
+    height: 40px; /* ความสูงของปุ่ม */
+    padding: 0; /* เอาการเว้นระยะในปุ่มออก */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .nav-button {
     position: absolute;
@@ -124,12 +156,12 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: 1px solid palevioletred; /* ขอบเมื่อเลือก */
 }
-
 .category-button.active {
   background-color: palevioletred; /* สีพื้นหลังเมื่อเลือก */
   color: white; /* สีข้อความเมื่อเลือก */
-  border: 1px solid palevioletred; /* ขอบเมื่อเลือก */
+  border: 1px solid white; /* ขอบเมื่อเลือก */
 }
 
 .frames-row {
@@ -141,14 +173,19 @@
 .concert-frame {
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงรูปภาพและข้อความ */
   align-items: center; /* จัดให้มีการจัดแนวในแนวตั้งอยู่กลาง */
-  border: 2px solid #ccc; /* ขอบกรอบ */
+  border: 1px solid white; /* ขอบกรอบ */
   border-radius: 8px; /* มุมโค้งสำหรับกรอบ */
   padding: 10px; /* ระยะห่างภายในกรอบ */
   width: 33%; /* ความกว้างของกรอบ (ปรับตามต้องการ) */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* เงาให้กับกรอบ */
   margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
-}
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเคลื่อนไหว */
 
+}
+.concert-frame:hover{
+  transform: scale(1.05); /* ขยายเมื่อ hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเด้ง */
+  background-color: palevioletred;
+}
 .frame-image {
   width: 140px; /* ความกว้างของรูปภาพ */
   height: auto; /* ความสูงอัตโนมัติเพื่อรักษาสัดส่วน */
@@ -169,16 +206,19 @@
 
 .date-time {
     color: rgb(7, 206, 7) !important;
+    font-size: 15px; 
     font-weight: bold;
 }
 
 .time {
     color: rgb(0, 123, 255) !important; /* ใช้สีที่ต้องการ */
+    font-size: 15px; 
     font-weight: bold;
 }
 
 .location {
     color: blue !important; 
+    font-size: 15px; 
     font-weight: bold;
 }
 
@@ -208,9 +248,424 @@
   border-radius: 25px;
   
 }
+/* PAGE SPORT */
+.text-sports {
+  font-size: 40px;
+  color: #039ba0 !important; /* สีข้อความ */
+  margin-bottom: 10px;
+}
 
-  
+.sport-page {
+  background: linear-gradient(to bottom right, #effaf9, #aafaed); /* พื้นหลังไล่สีพาสเทล */
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px; /* ขอบโค้งมน */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.sport-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* การเปลี่ยนภาพอย่างนุ่มนวล */
+  position: absolute; /* วางซ้อนรูปภาพ */
+  top: 0;
+  left: 0;
+}
+
+.image-hover-container {
+  position: relative;
+  width: 1060px; /* กำหนดความกว้างคงที่ */
+  height: auto; /* ให้ปรับความสูงโดยอัตโนมัติ */
+  display: flex; /* ช่วยให้คอนเทนเนอร์รูปภาพรักษาความสูงของภาพ */
+  justify-content: center; /* จัดรูปภาพให้อยู่ตรงกลางภายในคอนเทนเนอร์ */
+}
+
+.image-hover-container::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* อัตราส่วน 16:9 เพื่อรักษาความสูงของคอนเทนเนอร์ */
+}
+
+.image-hover-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ทำให้ภาพครอบคลุมคอนเทนเนอร์โดยไม่ผิดรูป */
+}
+
+.first-image {
+  z-index: 1;
+}
+
+.hover-image {
+  opacity: 0;
+  z-index: 2; /* ทำให้ภาพที่สองอยู่ด้านบน */
+}
+
+.image-hover-container:hover .hover-image {
+  opacity: 1; /* แสดงภาพที่สองเมื่อเลื่อนเมาส์ */
+}
+
+.image-hover-container:hover .first-image {
+  opacity: 0; /* ซ่อนภาพแรกเมื่อเลื่อนเมาส์ */
+}
+.video-container1 {
+  width: 1060px; /* ความกว้างของกรอบ */
+  height: 515px; /* ความสูงของกรอบ */
+  overflow: hidden; /* ซ่อนเนื้อหาที่เกิน */
+  position: relative; /* ตั้งตำแหน่งเป็น relative */
+}
+
+.video-iframe {
+  width: 100%; /* ทำให้กว้างเต็มกรอบ */
+  height: 100%; /* ทำให้สูงเต็มกรอบ */
+  border: none; /* ไม่มีขอบ */
+  display: block; /* แสดงเป็นบล็อค */
+}
+
+.text-container {
+  display: inline-block; /* ช่วยให้สามารถทำให้ข้อความเคลื่อนไหวได้ */
+}
+
+.text-sports1 {
+  font-size: 35px;
+  color: #039ba0 !important; /* สีข้อความ */
+  margin-top: 50px;
+  transition: transform 0.5s; /* การเคลื่อนไหวเรียบง่ายเมื่อเปลี่ยน */
+}
+.text-sports2 {
+  font-size: 22px;
+  color: #032da0 !important; /* สีข้อความ */
+  transition: transform 0.5s; /* การเคลื่อนไหวเรียบง่ายเมื่อเปลี่ยน */
+}
+/* เอฟเฟกต์การกระเด้งเมื่อเมาส์อยู่เหนือข้อความ */
+.text-sports1:hover {
+  animation: bounce 1.6s infinite; /* เรียกใช้ Animation */
+}
+
+/* เอฟเฟกต์การกระเด้ง */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* เริ่มต้นที่ตำแหน่งเดิม */
+  }
+  40% {
+    transform: translateY(-15px); /* ขยับขึ้น */
+  }
+  60% {
+    transform: translateY(-7px); /* ขยับลงเล็กน้อย */
+  }
+}
+
+/* ทำให้บรรทัดแรกเคลื่อนไหวก่อน */
+.text-container .text-sports1:nth-child(1):hover {
+  animation-delay: 0s; /* ไม่มีการหน่วง */
+}
+
+/* ทำให้บรรทัดที่สองเคลื่อนไหวช้าลง */
+.text-container .text-sports1:nth-child(2):hover {
+  animation-delay: 0.3s; /* หน่วงไป 0.3 วินาที */
+}
+
+.category-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden; /* ป้องกันไม่ให้เนื้อหาล débord ออกนอกกรอบ */
+}
+
+.category-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  background: none; /* ลบพื้นหลัง */
+  border: none; /* ลบกรอบ */
+  display: inline; /* ทำให้ข้อความไม่มีกรอบ */
+}
+
+.image-gallery1 {
+  display: flex;
+  overflow-x: auto; /* ทำให้เลื่อนได้ทางขวา */
+  scroll-snap-type: x mandatory; /* เพิ่มฟังก์ชันเลื่อน */
+  gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+  padding: 10px; /* เพิ่มระยะห่างด้านใน */
+}
+.image-container1 {
+  position: relative;
+  width: 350px; /* กำหนดความกว้างของแต่ละรูปภาพ */
+  height: 280px; /* กำหนดความสูงที่แน่นอนให้กับกรอบภาพ */
+  flex: 0 0 auto; /* ป้องกันไม่ให้รูปภาพหดตัว */
+  text-align: center;
+  overflow: hidden; /* ป้องกันไม่ให้ส่วนที่เกินออกมานอกกรอบ */
+  transition: transform 0.3s; /* เพิ่มการเปลี่ยนแปลงให้เรียบ */
+  scroll-snap-align: start; /* ทำให้เริ่มที่ส่วนต้นของแต่ละรูป */
+}
+
+.image-container1 img {
+  width: 100%;
+  height: 100%; /* ทำให้รูปภาพเต็มพื้นที่กรอบ */
+  object-fit: cover; /* ปรับขนาดรูปภาพให้เต็มกรอบ โดยไม่เสียสัดส่วน */
+  border-radius: 5px; /* ขอบโค้งมน */
+}
 
 
+.category-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px; /* เปลี่ยนตำแหน่งข้อความให้อยู่ทางซ้าย */
+  background: white; /* พื้นหลังข้อความ */
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: black !important;
+  font-size: 15px;
+}.new-category-container {
+  padding: 30px;
+  background-color: #f0f0f5; /* สีพื้นหลังที่เป็นโทนเรียบ */
+  border-radius: 10px;
+}
 
-  
+.new-image-gallery {
+  display: flex;
+  flex-wrap: wrap; /* ทำให้รูปภาพห่อในแถวใหม่เมื่อแถวเต็ม */
+  justify-content: space-between; /* จัดวางระยะห่างระหว่างรูปภาพให้เท่ากัน */
+  gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+}
+
+.new-image-container {
+  width: calc(50% - 20px); /* แบ่งความกว้างของรูปภาพเป็นครึ่งหนึ่ง (50%) */
+  height: 300px; /* กำหนดความสูงของรูปภาพ */
+  border-radius: 15px; /* ทำให้กรอบรูปภาพโค้งมน */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับรูป */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.new-image-container:hover {
+  transform: translateY(-10px); /* ขยับรูปภาพขึ้นเมื่อชี้เมาส์ */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.6); /* เพิ่มเงาวิบวับ */
+  filter: brightness(1.2); /* ทำให้รูปภาพสว่างขึ้น */
+}
+
+.new-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ปรับขนาดรูปภาพให้เต็มกรอบ */
+  border-radius: 15px; /* กรอบโค้งมนตามภาพ */
+  transition: filter 0.3s ease;
+}
+
+.new-image-container:hover img {
+  filter: brightness(1.1) saturate(1.2); /* ทำให้ภาพมีสีสดและสว่างมากขึ้น */
+}
+
+.frames-row-sport {
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกรอบในแนวนอน */
+  justify-content: start; 
+  margin:30px 0 ; /* ระยะห่างรอบกรอบ */
+  flex-wrap: wrap; /* เพิ่มการห่อหุ้มกรอบเมื่อพื้นที่ไม่พอ */
+}
+.sport-frame {
+  display: flex; /* ใช้ Flexbox เพื่อจัดเรียงรูปภาพและข้อความ */
+  align-items: center; /* จัดให้มีการจัดแนวในแนวตั้งอยู่กลาง */
+  border: 2px solid white; /* ขอบกรอบ */
+  border-radius: 8px; /* มุมโค้งสำหรับกรอบ */
+  padding: 10px; /* ระยะห่างภายในกรอบ */
+  width: 33%; /* ความกว้างของกรอบ (ปรับตามต้องการ) */
+  margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเคลื่อนไหว */
+
+}
+.sport-frame:hover{
+  transform: scale(1.05); /* ขยายเมื่อ hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเด้ง */
+  background-color: rgb(112, 216, 216); /* เปลี่ยนสีพื้นหลัง */
+}
+.frame-image {
+  width: 140px; /* ความกว้างของรูปภาพ */
+  height: auto; /* ความสูงอัตโนมัติเพื่อรักษาสัดส่วน */
+  border-radius: 8px; /* มุมโค้งสำหรับรูปภาพ */
+  margin-right: 10px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
+  height: 160px;
+}
+.category-buttons1 {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+  margin-top: 50px;
+}
+.category-button1 {
+  /* สไตล์ทั่วไปของปุ่ม */
+  background-color: #f0f0f0; /* สีพื้นหลังปกติ */
+  color: #000; /* สีข้อความปกติ */
+  padding: 10px 40px;
+  border: none;
+  border-radius: 20px; /* ทำให้ขอบมน */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid rgb(73, 175, 175); /* ขอบเมื่อเลือก */
+}
+.category-button1.active {
+  background-color: rgb(73, 175, 175); /* สีพื้นหลังเมื่อเลือก */
+  color: white; /* สีข้อความเมื่อเลือก */
+  border: 1px solid white; /* ขอบเมื่อเลือก */
+}
+@keyframes waveEffect {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.new-image-container:hover img {
+  animation: waveEffect 0.5s ease-in-out infinite;
+}
+
+/* BUYTICKET  SPORT*/
+.sport-page1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.concert-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    max-width: 800px; 
+}
+
+.image1 {
+    flex: 1;
+    margin-right: 20px; 
+}
+
+.concert-image-large {
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+.frame-text1 {
+    flex: 2; 
+    text-align: left; 
+}
+
+.title1 {
+    font-size: 28px; /* เพิ่มขนาดฟอนต์ */
+    font-weight: bold;
+    margin-bottom: 10px; 
+}
+
+.date-time1{
+  font-size: 16px; 
+  margin: 5px 0; 
+  text-align: left; /* จัดให้อยู่ซ้าย */
+  color: rgb(7, 206, 7);
+}
+.time1{
+  font-size: 16px; 
+  margin: 5px 0; 
+  text-align: left; /* จัดให้อยู่ซ้าย */
+  color: rgb(0, 123, 255); /* ใช้สีที่ต้องการ */
+}
+.location1 {
+  font-size: 16px; 
+  margin: 5px 0; 
+  text-align: left; /* จัดให้อยู่ซ้าย */
+  color: blue;
+}
+
+.ticket-info {
+  margin-top: 20px; 
+  text-align: left; /* จัดให้อยู่ซ้าย */
+}
+.icon {
+    margin-right: 5px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
+}
+.price-button-container {
+    display: flex; 
+    justify-content: space-between; /* จัดให้อยู่ที่ปลายทั้งสองด้าน */
+    align-items: center; 
+    margin-top: 160px; /* เพิ่มช่องว่างด้านบนเพื่อให้ขยับลงมาข้างล่าง */
+    padding: 10px; 
+    border: 1px solid #ccc; /* กรอบ */
+    border-radius: 30px; /* มุมโค้งมน */
+    background-color: #f9f9f9; /* สีพื้นหลังกรอบ */
+    width: 100%; /* ความกว้าง 100% ของคอนเทนเนอร์พ่อ */
+    max-width: 1200px; /* ขยายความกว้างสูงสุด */
+    margin-left: auto;  
+    margin-right: auto; 
+}
+
+.price {
+  font-size: 17px; 
+  font-weight: bold; 
+}
+
+.buy-ticket-btn1 {
+  padding: 10px 20px; 
+  background-color: red; 
+  color: white; 
+  border: none; 
+  border-radius: 30px; 
+  cursor: pointer; 
+}
+.buy-ticket-btn1:hover {
+  padding: 10px 20px; 
+  background-color: rgb(0, 255, 255); 
+  color: white; 
+  border-radius: 30px; 
+  border:1px solid rgb(8, 144, 207)
+}
+.sport{
+  color: red !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* BUYTICKET CONCERT*/
+.concert-page {
+  background: linear-gradient(to bottom right, #f3e5f5, #e69af3); /* ไล่สีม่วงพาสเทล */
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px; /* ขอบโค้งมน */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+.buy-ticket-btn2 {
+  padding: 10px 20px; 
+  background-color: red; 
+  color: white; 
+  border: none; 
+  border-radius: 30px; 
+  cursor: pointer; 
+}
+.buy-ticket-btn2:hover {
+  padding: 10px 20px; 
+  background-color: rgb(252, 99, 183); 
+  color: white; 
+  border-radius: 30px; 
+  border:1px solid rgb(207, 8, 147)
+}
+.price-button-container1 {
+  display: flex; 
+  justify-content: space-between; /* จัดให้อยู่ที่ปลายทั้งสองด้าน */
+  align-items: center; 
+  margin-top: 120px; /* เพิ่มช่องว่างด้านบนเพื่อให้ขยับลงมาข้างล่าง */
+  padding: 10px; 
+  border: 1px solid #ccc; /* กรอบ */
+  border-radius: 30px; /* มุมโค้งมน */
+  background-color: #f9f9f9; /* สีพื้นหลังกรอบ */
+  width: 100%; /* ความกว้าง 100% ของคอนเทนเนอร์พ่อ */
+  max-width: 1200px; /* ขยายความกว้างสูงสุด */
+  margin-left: auto;  
+  margin-right: auto; 
+}
+.concert{
+  color: red !important;
+  font-size: 30px;
+  font-weight: bold;
+}

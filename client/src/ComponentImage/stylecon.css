@@ -9,12 +9,12 @@
   }
   .bus-concert-image1 {
     margin-top: 20px;
-    width: 550px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
-    height: 650px;
+    width: 650px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 700px;
   }
   .text-below-image {
     font-weight: bold; /* ทำให้ข้อความตัวหนา */
-    font-size: 1.7rem; /* ปรับขนาดฟอนต์ */
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ */
     background: linear-gradient(90deg, #000000, #e40675); /* ไล่สีจากดำไปชมพู */
     -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
     -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
@@ -22,7 +22,7 @@
   }
   .text-below-image1 {
     font-weight: bold; /* ทำให้ข้อความตัวหนา */
-    font-size: 1.4rem; /* ปรับขนาดฟอนต์ */
+    font-size: 1.2rem; /* ปรับขนาดฟอนต์ */
     background: linear-gradient(90deg, #000000, #e40675); /* ไล่สีจากดำไปชมพู */
     -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
     -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
@@ -34,7 +34,12 @@
     gap: 10px; /* เพิ่มช่องว่างระหว่างรูป */
     margin-top: 20px;
   }
-  
+  .image-grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ให้มี 4 รูปในแต่ละแถว */
+    gap: 10px; /* เพิ่มช่องว่างระหว่างรูป */
+    margin-top: 20px;
+  }
   .grid-image {
     width: 100%;
     height: auto;
@@ -69,4 +74,67 @@
     -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
     -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
     margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-en-image {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #f87903); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-en-image1 {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.2rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000,#f87903); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-pixxi-image {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #ba03e7); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-pixxi-image1 {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.2rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #ba03e7); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .pixxi-concert-image {
+    margin-top: 20px;
+    width: 550px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 350px;
+  }
+  .pixxi-concert-image1 {
+    margin-top: 20px;
+    width: 750px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 600px;
+  }
+  .text-lykn-image {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.5rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #e40606); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .text-lykn-image1 {
+    font-weight: bold; /* ทำให้ข้อความตัวหนา */
+    font-size: 1.2rem; /* ปรับขนาดฟอนต์ */
+    background: linear-gradient(90deg, #000000, #e40606); /* ไล่สีจากดำไปชมพู */
+    -webkit-background-clip: text; /* เติมสีเฉพาะในตัวอักษร */
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความโปร่งใสและใช้สีจาก background */
+    margin-top: 20px; /* เพิ่มระยะห่างจากรูปภาพ */
+  }
+  .lykn-concert-image {
+    margin-top: 20px;
+    width: 650px; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+    height: 680px;
   }
