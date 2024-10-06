@@ -6,6 +6,8 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import ConcertList from './pages/ConcertList';
 import Products from './pages/Products';
+import Cart from './pages/Cart';
+import Receiptproduct from './pages/ReceiptProduct'
 import Booking from './pages/Booking';
 import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
@@ -100,6 +102,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<ConcertList />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/ReceiptProduct" element={<Receiptproduct />} />
+            <Route path="/cart" element={<Cart />} /> 
             <Route path="/concerts" element={<Concerts />} />
             <Route path="/sports" element={<Sports />} />
             <Route path="/buy-ticketsport/:id" element={<BuyTicketSport />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรกีฬา */}
