@@ -686,60 +686,27 @@ h4 {
   font-size: 30px;
   font-weight: bold;
 }
-/* PROMOTION*/
-.promotion-page {
-  font-family: "Arial", sans-serif;
+/* การจัดวางโครงสร้างหลัก */
+.profile-page {
+  display: flex;
+}
+
+/* สไตล์สำหรับ Sidebar */
+.sidebar {
+  width: 250px; /* ปรับความกว้างตามต้องการ */
+  background-color: #2c3e50; /* สีพื้นหลังของ Sidebar */
+  color: white;
+  min-height: 100vh; /* ให้ Sidebar สูงเต็มหน้าจอ */
   padding: 20px;
-  background: linear-gradient(to bottom right, #f3e5f5, #faa7de);
-  position: relative; /* เพื่อใช้กับตำแหน่งของกล่อง Flash Sale */
 }
 
-.promotion-title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
-  color: #ad054b !important;
-}
-.promotion-subtitle {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  color: #e63946 !important;
-}
-.flash-sale-box {
-  position: absolute; /* กำหนดตำแหน่งเพื่อให้อยู่ด้านซ้าย */
-  top: 20px; /* ปรับตามต้องการ */
-  left: 20px; /* ปรับตามต้องการ */
-  background-color: #ffcc00; /* สีพื้นหลังของ Flash Sale */
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-.image-container-pro {
-  display: flex;
-  justify-content: center; /* จัดกลางภาพ */
-  margin: 20px 0; /* เว้นพื้นที่รอบภาพ */
-}
-.pro-image {
-  max-width: 1000px; /* กำหนดความกว้างสูงสุดให้กับภาพ */
-  width: 100%; /* ทำให้ภาพตอบสนองต่อขนาด */
-  border-radius: 10px; /* มุมโค้งของภาพ */
-}
-.dot-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.dot {
-  height: 10px; /* ความสูงของจุด */
-  width: 10px; /* ความกว้างของจุด */
-  margin: 0 5px; /* เว้นพื้นที่ระหว่างจุด */
-  background-color: white; /* สีพื้นหลังของจุด */
-  border-radius: 50%; /* ทำให้จุดเป็นรูปกลม */
-  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ที่จุด */
-  transition: background-color 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนสี */
+.sidebar li {
+  margin-bottom: 20px;
 }
 
 .dot.active {
@@ -1027,152 +994,81 @@ h4 {
 }
 .buy-customer {
   background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+.sidebar a {
   color: white;
-  padding: 5px 30px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 35px;
-  margin-top: 10px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
-  align-self: center; /* จัดปุ่มอยู่กลางในแนวตั้ง */
-  margin-left: auto; /* ให้ปุ่มอยู่ทางขวา */
-  transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อเปลี่ยนสี */
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.buy-customer:hover {
-  background-color: #c9006e; /* เปลี่ยนสีเมื่อ hover ก่อนใช้คูปอง */
+.sidebar a:hover {
+  text-decoration: underline;
 }
 
-/* เมื่อใช้คูปองแล้ว เปลี่ยนสีปุ่มเป็นสีฟ้าอ่อน */
-.buy-customer.used {
-  background-color: #18c3fc; /* สีฟ้าอ่อน */
-}
-.promotion {
-  font-size: 3.2rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
-  color: #da0387 !important;
-  margin-top: 20px;
-}
-.promotion-box {
-  border-radius: 5px; /* มุมโค้ง */
-  padding: 15px; /* เว้นพื้นที่ภายใน */
-  background-color: #ffefef;
-  margin-top: 10px;
+/* สไตล์สำหรับเนื้อหาโปรไฟล์ */
+.profile-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #ecf0f1; /* สีพื้นหลังสำหรับเนื้อหา */
 }
 
-.promotion-container-customer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.profile-content h2 {
+  color: #34495e;
+  margin-bottom: 30px;
 }
 
-.promotion-caption {
-  font-size:30px;
-  color: black !important;
-  font-weight: bold;
-}
-.buy-customer1 {
-  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
-  color: white;
-  padding: 5px 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 30px;
-  margin-top: 10px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
-  align-self: center; /* จัดปุ่มอยู่กลางในแนวตั้ง */
-  margin-left: auto; /* ให้ปุ่มอยู่ทางขวา */
-  transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อเปลี่ยนสี */
+/* สไตล์สำหรับรูปโปรไฟล์ */
+.profile-picture img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 30px;
 }
 
-.buy-customer1:hover {
-  background-color: #c9006e; /* เปลี่ยนสีเมื่อ hover ก่อนใช้คูปอง */
-}
-
- /* เก็บคูปอง */
- .coupon-container {
+/* สไตล์สำหรับฟอร์ม */
+.profile-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
+  gap: 20px;
 }
 
-.coupon-card {
-  border: 1px solid #e5e5e5 !important;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 480px;
-  padding: 15px;
-  margin: 10px;
-  background-color: #fff !important;
-  
-}
-
-.coupon-content {
-  display: flex;
-  align-items: center; /* จัดกลางในแนวตั้ง */
-}
-
-.coupon-image {
-  width: 120px;
-  height: 140px;
-  margin-right: 10px; /* เว้นระยะห่างระหว่างรูปภาพและข้อความ */
-}
-
-.coupon-text {
-  display: flex;
-  flex-direction: column; /* ข้อความจะเรียงจากบนลงล่าง */
-}
-
-.coupon-price {
-  font-size: 24px;
+.profile-form label {
+  width: 100%;
+  color: #34495e;
   font-weight: bold;
-  color: #ff0066 !important;
-  margin : 5px 0;
-  margin-left: -100px;
 }
 
-.coupon-details{
-  font-size: 16px;
-  color: #333 !important;
-  margin: 5px 0; /* เว้นระยะห่างระหว่างข้อความ */
-  margin-left: -40px;
-}
-.coupon-expiry {
-  font-size: 16px;
-  color: #a5a5a5 !important;
-  margin: 5px 0; /* เว้นระยะห่างระหว่างข้อความ */
-  margin-top: 10px;
+.profile-form input,
+.profile-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #bdc3c7;
+  background-color: white;
+  color: #2c3e50;
 }
 
-.divider {
-  height: 1px; /* ความสูงของเส้น */
-  background-color: #a5a5a5; /* สีของเส้น */
-  width: 28%; /* ทำให้เส้นยาวเต็มที่ */
-  margin: 5px 0; /* ระยะห่างด้านบนและล่าง */
-  position: absolute; /* ทำให้สามารถควบคุมตำแหน่งได้ */
-  margin-top: 8%;
-}
-
-
-.coupon-button {
-  background-color: #ff0066 !important;
-  color: white !important;
+.profile-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #e74c3c;
+  color: white;
   border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: -50px;
-  margin-left: 25px;
 }
 
-.coupon-button:hover {
-  background-color: #ff6699 !important;
+.profile-form button:hover {
+  background-color: #c0392b;
 }
 
-.coupon-button.used {
-  background-color: #2ab2d4 !important; /* เปลี่ยนเป็นสีฟ้าอ่อนเมื่อใช้คูปองแล้ว */
+/* สำหรับหน้าจอขนาดใหญ่ จัดฟอร์มเป็นสองคอลัมน์ */
+@media (min-width: 768px) {
+  .profile-form label,
+  .profile-form input,
+  .profile-form select {
+    width: calc(50% - 10px);
+  }
 }
 .condition-page {
   background: linear-gradient(
