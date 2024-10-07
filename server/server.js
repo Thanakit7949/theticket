@@ -4,10 +4,26 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('./db');
+const multer = require('multer');
+const path = require('path');
 const app = express();
 
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON bodies
+// ให้บริการไฟล์ในโฟลเดอร์ uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// ตั้งค่า storage สำหรับ multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // กำหนด folder สำหรับเก็บไฟล์
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // ตั้งชื่อไฟล์ใหม่
+  },
+});
+
+const upload = multer({ storage });
 
 // Register route
 app.post('/register', (req, res) => {
@@ -58,14 +74,35 @@ app.get('/users/:id', (req, res) => {
   });
 });
 
+app.post('/uploads', upload.single('image'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).send('No file uploaded.');
+  }
+
+  const imageUrl = `http://localhost:3001/uploads/${req.file.filename}`;
+  const userId = req.body.userId; // สมมุติว่าคุณส่ง userId มาด้วย
+
+  if (!userId) {
+    return res.status(400).send('User ID is required.');
+  }
+
+  db.query('UPDATE users SET profile_image = ? WHERE id = ?', [imageUrl, userId], (err, result) => {
+    if (err) {
+      console.error('Error updating profile_image:', err);
+      return res.status(500).send('Database error');
+    }
+    res.status(200).send({ imageUrl });
+  });
+});
+
 // Route to update a user's profile
 app.put('/users/:id', (req, res) => {
   const userId = req.params.id;
-  const { first_name, last_name, email, phone, birth_date, gender } = req.body;
+  const { first_name, last_name, email, phone, birth_date, gender, profile_image } = req.body;
 
   db.query(
-    'UPDATE users SET first_name = ?, last_name = ?, email = ?, phone = ?, birth_date = ?, gender = ? WHERE id = ?',
-    [first_name, last_name, email, phone, birth_date, gender, userId],
+    'UPDATE users SET first_name = ?, last_name = ?, email = ?, phone = ?, birth_date = ?, gender = ?, profile_image = ? WHERE id = ?',
+    [first_name, last_name, email, phone, birth_date, gender, profile_image, userId],
     (err, result) => {
       if (err) return res.status(500).send('Database error');
       res.status(200).send('Profile updated successfully');

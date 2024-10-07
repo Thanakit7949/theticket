@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
 
-const Profile = ({ user }) => {
+const Profile = () => {
   const [profile, setProfile] = useState({
     first_name: '',
     last_name: '',
@@ -12,39 +12,22 @@ const Profile = ({ user }) => {
     gender: '',
   });
 
-  const [isLoading, setIsLoading] = useState(true); // สถานะการโหลด
-
-  // ฟังก์ชันเพื่อแปลงรูปแบบ ISO เป็น yyyy-MM-dd
-  const formatDate = (isoDate) => {
-    const date = new Date(isoDate);
-    const year = date.getFullYear();
-    const month = (`0${date.getMonth() + 1}`).slice(-2); // เติม 0 ถ้าเดือนมีค่าน้อยกว่า 10
-    const day = (`0${date.getDate()}`).slice(-2); // เติม 0 ถ้าวันมีค่าน้อยกว่า 10
-    return `${year}-${month}-${day}`;
-  };
-
-  // ฟังก์ชันเพื่อดึงข้อมูลจาก localStorage ถ้ามี
-  const loadProfileFromLocalStorage = () => {
-    const savedProfile = localStorage.getItem('profile');
-    if (savedProfile) {
-      return JSON.parse(savedProfile);
-    }
-    return null;
-  };
+  const [isLoading, setIsLoading] = useState(true);
+  const [image, setImage] = useState(null); // State สำหรับภาพโปรไฟล์
 
   useEffect(() => {
-    const savedProfile = loadProfileFromLocalStorage();
+    const savedProfile = JSON.parse(localStorage.getItem('profile'));
+    const savedUser = JSON.parse(localStorage.getItem('user'));
 
     if (savedProfile) {
       setProfile(savedProfile);
-      setIsLoading(false); // เสร็จแล้วไม่ต้องโหลด
-    } else if (user && user.id) {
-      // ดึงข้อมูลโปรไฟล์ผู้ใช้จาก backend
-      axios
-        .get(`http://localhost:3001/users/${user.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-        })
-        .then((res) => {
+      setImage(savedProfile.profile_image); // โหลด URL ของภาพจากโปรไฟล์ที่เก็บไว้
+      setIsLoading(false);
+    } else if (savedUser && savedUser.id) {
+      axios.get(`http://localhost:3001/users/${savedUser.id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+        .then(res => {
           const userData = res.data;
 
           // แปลงวันที่ในโปรไฟล์ให้เข้ากับฟอร์แมตของ HTML input[type="date"]
@@ -53,33 +36,72 @@ const Profile = ({ user }) => {
           }
 
           setProfile(userData);
-          localStorage.setItem('profile', JSON.stringify(userData)); // เก็บใน localStorage
-          setIsLoading(false); // เมื่อโหลดข้อมูลเสร็จ
+          setImage(userData.profile_image); // โหลด URL ของภาพโปรไฟล์จากฐานข้อมูล
+          setIsLoading(false);
         })
-        .catch((err) => console.error('Error fetching profile:', err));
+        .catch(err => {
+          console.error('Error fetching profile:', err);
+          setIsLoading(false);
+        });
     } else {
-      setIsLoading(false); // ถ้าไม่มี user ก็หยุดการโหลด
+      setIsLoading(false);
     }
-  }, [user]);
+  }, []);
+  
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const year = date.getFullYear();
+    const month = (`0${date.getMonth() + 1}`).slice(-2);
+    const day = (`0${date.getDate()}`).slice(-2);
+    return `${year}-${month}-${day}`;
+  };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const formData = new FormData();
+      formData.append('image', file);
+      formData.append('userId', JSON.parse(localStorage.getItem('user')).id); // ส่ง userId
+
+      axios.post('http://localhost:3001/uploads', formData)
+        .then(response => {
+          console.log('Image uploaded successfully:', response.data);
+          setImage(response.data.imageUrl); // เก็บ URL ของภาพใน state
+          // อัปเดตโปรไฟล์ด้วย URL ใหม่
+          setProfile((prevProfile) => ({
+            ...prevProfile,
+            profile_image: response.data.imageUrl,
+          }));
+        })
+        .catch(error => {
+          console.error('Error uploading image:', error);
+        });
+    }
+  };
+
+  // อัปเดตฟังก์ชัน handleUpdate
   const handleUpdate = async () => {
-    if (!user || !user.id) {
+    const savedUser = JSON.parse(localStorage.getItem('user'));
+
+    if (!savedUser || !savedUser.id) {
       alert('User ID is undefined');
       return;
     }
 
     try {
-      await axios.put(`http://localhost:3001/users/${user.id}`, profile, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      await axios.put(`http://localhost:3001/users/${savedUser.id}`, {
+        ...profile,
+        profile_image: image // ส่ง URL ของภาพโปรไฟล์
+      }, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       alert('Profile updated successfully!');
-      localStorage.setItem('profile', JSON.stringify(profile)); // อัปเดต localStorage หลังจากอัปเดตโปรไฟล์สำเร็จ
+      localStorage.setItem('profile', JSON.stringify(profile));
     } catch (error) {
       console.error('Update failed:', error);
     }
   };
 
-  // แสดงสถานะโหลด ถ้าข้อมูลยังไม่ถูกดึงมา
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -91,8 +113,12 @@ const Profile = ({ user }) => {
         <h2>โปรไฟล์</h2>
 
         <div className="profile-picture">
-          {/* คุณสามารถเพิ่มคอมโพเนนต์อัพโหลดรูปภาพที่นี่ */}
-          <img src="/path/to/profile-pic" alt="Profile" />
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+          {image ? (
+            <img src={image} alt="Profile" style={{ width: '150px', height: '150px', borderRadius: '50%' }} />
+          ) : (
+            <img src="/path/to/default-profile-pic" alt="Profile" style={{ width: '150px', height: '150px', borderRadius: '50%' }} />
+          )}
         </div>
 
         <div className="profile-form">

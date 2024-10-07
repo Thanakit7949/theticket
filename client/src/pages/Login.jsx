@@ -23,11 +23,16 @@ const Login = ({ setUser }) => {
       const res = await axios.post('http://localhost:3001/login', { email, password });
 
       if (res.data && res.data.user) {
-        const { user } = res.data;
+        const { token, user } = res.data;
 
-        localStorage.setItem('token', res.data.token);
+        // เก็บ token และ user ใน localStorage
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+
+        // ทำการอัปเดต state ของ user
         setUser(user);
 
+        // นำทางผู้ใช้ไปยังหน้าที่เหมาะสมตาม role
         if (user.role === 'admin') {
           navigate('/admin');
         } else if (user.role === 'user') {
