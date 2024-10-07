@@ -1,7 +1,6 @@
-// Profile.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Sidebar from './Sidebar'; // นำเข้า Sidebar
+import Sidebar from './Sidebar';
 
 const Profile = ({ user }) => {
   const [profile, setProfile] = useState({
@@ -13,14 +12,53 @@ const Profile = ({ user }) => {
     gender: '',
   });
 
+  const [isLoading, setIsLoading] = useState(true); // สถานะการโหลด
+
+  // ฟังก์ชันเพื่อแปลงรูปแบบ ISO เป็น yyyy-MM-dd
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const year = date.getFullYear();
+    const month = (`0${date.getMonth() + 1}`).slice(-2); // เติม 0 ถ้าเดือนมีค่าน้อยกว่า 10
+    const day = (`0${date.getDate()}`).slice(-2); // เติม 0 ถ้าวันมีค่าน้อยกว่า 10
+    return `${year}-${month}-${day}`;
+  };
+
+  // ฟังก์ชันเพื่อดึงข้อมูลจาก localStorage ถ้ามี
+  const loadProfileFromLocalStorage = () => {
+    const savedProfile = localStorage.getItem('profile');
+    if (savedProfile) {
+      return JSON.parse(savedProfile);
+    }
+    return null;
+  };
+
   useEffect(() => {
-    if (user && user.id) {
-      // ดึงข้อมูลโปรไฟล์ผู้ใช้
-      axios.get(`http://localhost:3001/users/${user.id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      })
-      .then(res => setProfile(res.data))
-      .catch(err => console.error('Error fetching profile:', err));
+    const savedProfile = loadProfileFromLocalStorage();
+
+    if (savedProfile) {
+      setProfile(savedProfile);
+      setIsLoading(false); // เสร็จแล้วไม่ต้องโหลด
+    } else if (user && user.id) {
+      // ดึงข้อมูลโปรไฟล์ผู้ใช้จาก backend
+      axios
+        .get(`http://localhost:3001/users/${user.id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        })
+        .then((res) => {
+          const userData = res.data;
+
+          // แปลงวันที่ในโปรไฟล์ให้เข้ากับฟอร์แมตของ HTML input[type="date"]
+          if (userData.birth_date) {
+            userData.birth_date = formatDate(userData.birth_date);
+          }
+
+          setProfile(userData);
+          localStorage.setItem('profile', JSON.stringify(userData)); // เก็บใน localStorage
+          setIsLoading(false); // เมื่อโหลดข้อมูลเสร็จ
+        })
+        .catch((err) => console.error('Error fetching profile:', err));
+    } else {
+      setIsLoading(false); // ถ้าไม่มี user ก็หยุดการโหลด
     }
   }, [user]);
 
@@ -32,13 +70,19 @@ const Profile = ({ user }) => {
 
     try {
       await axios.put(`http://localhost:3001/users/${user.id}`, profile, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       alert('Profile updated successfully!');
+      localStorage.setItem('profile', JSON.stringify(profile)); // อัปเดต localStorage หลังจากอัปเดตโปรไฟล์สำเร็จ
     } catch (error) {
       console.error('Update failed:', error);
     }
   };
+
+  // แสดงสถานะโหลด ถ้าข้อมูลยังไม่ถูกดึงมา
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="profile-page">
@@ -57,7 +101,7 @@ const Profile = ({ user }) => {
             type="text"
             value={profile.first_name}
             onChange={(e) => setProfile({ ...profile, first_name: e.target.value })}
-            placeholder="First Name"
+            placeholder={profile.first_name || 'First Name'}
           />
 
           <label>Last Name</label>
@@ -65,7 +109,7 @@ const Profile = ({ user }) => {
             type="text"
             value={profile.last_name}
             onChange={(e) => setProfile({ ...profile, last_name: e.target.value })}
-            placeholder="Last Name"
+            placeholder={profile.last_name || 'Last Name'}
           />
 
           <label>Email</label>
@@ -73,7 +117,7 @@ const Profile = ({ user }) => {
             type="email"
             value={profile.email}
             onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-            placeholder="Email"
+            placeholder={profile.email || 'Email'}
           />
 
           <label>Phone Number</label>
@@ -81,7 +125,7 @@ const Profile = ({ user }) => {
             type="tel"
             value={profile.phone}
             onChange={(e) => setProfile({ ...profile, phone: e.target.value })}
-            placeholder="Phone Number"
+            placeholder={profile.phone || 'Phone Number'}
           />
 
           <label>Birth Date</label>
