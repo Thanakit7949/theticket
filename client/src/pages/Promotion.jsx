@@ -11,6 +11,8 @@ import Pro7Image from "../assets/pro7.png";
 import Pro8Image from "../assets/pro8.png";
 import cat from "../assets/cat.png";
 import pro9Image from "../assets/proo.png";
+import pro10Image from "../assets/promo.webp";
+import { Link } from "react-router-dom"; // นำเข้า Link
 
 const promotionsData = [
   {
@@ -62,6 +64,50 @@ const promotionsData = [
     dates: "24-29 ตุลาคม 67",
   },
 ];
+const promotionsDataPro = [
+  {
+    image: Pro3Image,
+    title: "POP MART THE MONSTERS",
+    oldPrice: 2250,
+    newPrice: 1200,
+    dates: "19-25 ตุลาคม 67",
+  },
+  {
+    image: Pro4Image,
+    title: "สินค้าพิเศษ",
+    oldPrice: 700,
+    newPrice: 560,
+    dates: "20-25 ตุลาคม 67",
+  },
+  {
+    image: Pro5Image,
+    title: "ของเล่นใหม่",
+    oldPrice: 500,
+    newPrice: 375,
+    dates: "21-26 ตุลาคม 67",
+  },
+  {
+    image: Pro6Image,
+    title: "สินค้าใหม่",
+    oldPrice: 600,
+    newPrice: 510,
+    dates: "22-27 ตุลาคม 67",
+  },
+  {
+    image: Pro7Image,
+    title: "สินค้าแนะนำ",
+    oldPrice: 800,
+    newPrice: 480,
+    dates: "23-28 ตุลาคม 67",
+  },
+  {
+    image: Pro8Image,
+    title: "ของเล่นสไตล์",
+    oldPrice: 1000,
+    newPrice: 700,
+    dates: "24-29 ตุลาคม 67",
+  },
+];
 
 const PromotionCard = ({ promotion }) => (
   <div className="frame-promotion">
@@ -73,6 +119,21 @@ const PromotionCard = ({ promotion }) => (
       <span className="new-price">฿{promotion.newPrice}</span>
     </div>
     <h3 className="promo-dates">🛒 เริ่มโปรตั้งแต่ {promotion.dates}</h3>
+  </div>
+);
+const PromotionPro = ({ promotion }) => (
+  <div className="frame-flashsale">
+    <div className="flashsale-label">{promotion.discount}</div>
+    <img src={promotion.image} alt="promotion" className="pro-image" />
+    <h3 className="promotion-text">{promotion.title}</h3>
+    <div className="price-section">
+      💰<span className="old-price">฿{promotion.oldPrice}</span>
+      <span className="new-price">฿{promotion.newPrice}</span>
+    </div>
+    {/* ข้อความ "รีบกดก่อนหมดโปร" */}
+    <p className="limited-offer">🚨รีบกดก่อนหมดโปร🚨</p>
+    {/* ปุ่ม "หยิบใส่ตะกร้า" */}
+    <button className="add-to-cart-btn">หยิบใส่ตะกร้า</button>
   </div>
 );
 
@@ -99,7 +160,7 @@ const Promotion = () => {
     { price: 150, minOrder: 1200, expiryDate: "2024.10.20" },
     { price: 500, minOrder: 2500, expiryDate: "2024.12.01" },
   ];
-  const [collectedCoupons, setCollectedCoupons] = useState([]);// ใช้ object เพื่อติดตามคูปองที่เก็บแล้ว
+  const [collectedCoupons, setCollectedCoupons] = useState([]); // ใช้ object เพื่อติดตามคูปองที่เก็บแล้ว
   const handleCollectCoupon = (index) => {
     // เพิ่ม index ของคูปองที่ถูกเก็บไปใน array
     setCollectedCoupons((prev) => [...prev, index]);
@@ -205,29 +266,43 @@ const Promotion = () => {
       </div>
       {/* เก็บคูปอง*/}
 
-      <h1 className="promotion">ลดคุ้ม 🎉</h1>
+   
+      <div className="caption-container1">
+          <img src={pro10Image} alt="ลูกค้าใหม่" className="image-pro" />
+        </div>
       <div className="promotion-box">
         <div className="promotion-container-customer">
           <p className="promotion-caption">เติมคูปอง ทุกเที่ยงคืน 00.00 น.</p>
-          <button className="buy-customer1">เงื่อนไขคูปอง</button>
+          <button className="buy-customer1">
+            <Link
+              to="/conditions"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              เงื่อนไขคูปอง
+            </Link>
+          </button>
         </div>
       </div>
 
-     {/* การ์ดแสดงคูปอง */}
-     <div className="coupon-container">
+      {/* การ์ดแสดงคูปอง */}
+      <div className="coupon-container">
         {coupons.map((coupon, index) => (
           <div className="coupon-card" key={index}>
             <div className="coupon-content">
               <img src={pro9Image} alt="coupon" className="coupon-image" />
               <div className="coupon-text">
                 <p className="coupon-price">฿{coupon.price}</p>
-                <p className="coupon-details">สั่งซื้อตั้งแต่ ฿{coupon.minOrder}</p>
+                <p className="coupon-details">
+                  สั่งซื้อตั้งแต่ ฿{coupon.minOrder}
+                </p>
                 <div className="divider"></div> {/* เส้นขีด */}
                 <p className="coupon-expiry">วันหมดอายุ: {coupon.expiryDate}</p>
               </div>
               {/* ปุ่มเก็บคูปอง */}
               <button
-                className={`coupon-button ${collectedCoupons.includes(index) ? "used" : ""}`}
+                className={`coupon-button ${
+                  collectedCoupons.includes(index) ? "used" : ""
+                }`}
                 onClick={() => handleCollectCoupon(index)} // ส่ง index เป็น parameter
                 disabled={collectedCoupons.includes(index)} // ปิดการใช้งานปุ่มเมื่อถูกเก็บแล้ว
               >
@@ -239,13 +314,22 @@ const Promotion = () => {
       </div>
 
       {/* กล่องคำบรรยายใต้ภาพ */}
-      <div className="image-caption-box">
+
+      <div className="image-caption-box1">
         <div className="caption-container">
           <p className="image-caption">FLASH SALE</p>
           <p className="time-caption">{formatTime(timeLeft)}</p>{" "}
           {/* แสดงเวลาที่ลดลง */}
         </div>
       </div>
+      <div className="image-caption-box2">
+      <div className="promotion-container">
+        {promotionsDataPro.map((promotion, index) => (
+          <PromotionPro key={index} promotion={promotion} />
+        ))}
+      </div>
+      </div>
+
     </div>
   );
 };

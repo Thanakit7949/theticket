@@ -23,6 +23,9 @@ import LyknConcert from './ComponentImage/LyknConcert';
 import BuyTicketSport from './pages/BuyTicketSport'; 
 import BuyTicketCon from './pages/BuyTicketCon'; 
 import Promotion from './pages/Promotion'; 
+import CouponPromotion from './pages/CouponPromotion'; 
+import Ex from './pages/ex'; 
+
 import './styles.css';
 
 const App = () => {
@@ -112,6 +115,7 @@ const App = () => {
             <Route path="/sports" element={<Sports />} />
             <Route path="/buy-ticketsport/:id" element={<BuyTicketSport />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรกีฬา */}
             <Route path="/buy-ticketCon/:id" element={<BuyTicketCon />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรคอนเสิร์ต */}
+            <Route path="/conditions" element={<CouponPromotion />} />
             <Route path="/busconcert" element={<BusConcert />} />
             <Route path="/got7concert" element={<Got7Concert />} />
             <Route path="/nctconcert" element={<NctConcert />} />
@@ -123,6 +127,7 @@ const App = () => {
             <Route path="/booking/:concertId" element={<Booking />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/ex" element={<Ex />} />
           </Routes>
         </div>
       </div>
