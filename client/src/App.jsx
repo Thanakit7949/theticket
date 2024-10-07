@@ -7,7 +7,8 @@ import Profile from './pages/Profile';
 import ConcertList from './pages/ConcertList';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
-import Receiptproduct from './pages/ReceiptProduct'
+import Receiptproduct from './pages/ReceiptProduct';
+import Information from './pages/Information';
 import Booking from './pages/Booking';
 import Payment from './pages/Payment';
 import AdminDashboard from './pages/AdminDashboard';
@@ -21,6 +22,7 @@ import PixxiConcert from './ComponentImage/PixxiConcert';
 import LyknConcert from './ComponentImage/LyknConcert';  
 import BuyTicketSport from './pages/BuyTicketSport'; 
 import BuyTicketCon from './pages/BuyTicketCon'; 
+import Promotion from './pages/Promotion'; 
 import './styles.css';
 
 const App = () => {
@@ -101,9 +103,11 @@ const App = () => {
         <div className="container mx-auto px-4 py-4">
           <Routes>
             <Route path="/" element={<ConcertList />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/products" element={<Products />} /> 
+            <Route path="/promotions" element={<Promotion />} /> 
             <Route path="/ReceiptProduct" element={<Receiptproduct />} />
             <Route path="/cart" element={<Cart />} /> 
+            <Route path="/Information" element={<Information />} /> 
             <Route path="/concerts" element={<Concerts />} />
             <Route path="/sports" element={<Sports />} />
             <Route path="/buy-ticketsport/:id" element={<BuyTicketSport />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรกีฬา */}

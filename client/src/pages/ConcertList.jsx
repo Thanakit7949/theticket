@@ -285,7 +285,7 @@ const ConcertList = () => {
 
           {/* Pagination or next page button */}
           <div className="flex justify-center mt-6">
-  <Link to="/news" className="next-page-btn">
+  <Link to="/information" className="next-page-btn">
     Go to Next Page
   </Link>
 </div>

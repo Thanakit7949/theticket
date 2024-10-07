@@ -1,0 +1,64 @@
+import React, { useState } from "react";
+import "./styless.css";
+import pro9Image from "../assets/proo.png";
+
+const Promotion = () => {
+  // สร้าง array สำหรับคูปอง พร้อมข้อมูลราคและวันหมดอายุที่แตกต่างกัน
+  const coupons = [
+    { price: 240, minOrder: 1600, expiryDate: "2024.10.31" },
+    { price: 300, minOrder: 2000, expiryDate: "2024.11.15" },
+    { price: 150, minOrder: 1200, expiryDate: "2024.10.20" },
+    { price: 500, minOrder: 2500, expiryDate: "2024.12.01" },
+  ];
+
+  const [collectedCoupons, setCollectedCoupons] = useState([]); // ใช้ array เพื่อติดตามคูปองที่เก็บแล้ว
+
+  const handleCollectCoupon = (index) => {
+    // เพิ่ม index ของคูปองที่ถูกเก็บไปใน array
+    setCollectedCoupons((prev) => [...prev, index]);
+  };
+
+  return (
+    <div className="promotion-page">
+      <h1 className="promotion-title">PROMOTION 🎉</h1>
+      <p className="promotion-subtitle">
+        ᴇɴᴊᴏʏ ᴇxᴄʟᴜꜱɪᴠᴇ เมื่อซื้อสินค้าครบตามที่กำหนดรับไปเลยส่วนลด 50%!
+      </p>
+
+      <h1 className="promotion">ลดคุ้ม 🎉</h1>
+      <div className="promotion-box">
+        <div className="promotion-container-customer">
+          <p className="promotion-caption">เติมคูปอง ทุกเที่ยงคืน 00.00 น.</p>
+          <button className="buy-customer1">เงื่อนไขคูปอง</button>
+        </div>
+      </div>
+
+      {/* การ์ดแสดงคูปอง */}
+      <div className="coupon-container">
+        {coupons.map((coupon, index) => (
+          <div className="coupon-card" key={index}>
+            <div className="coupon-content">
+              <img src={pro9Image} alt="coupon" className="coupon-image" />
+              <div className="coupon-text">
+                <p className="coupon-price">฿{coupon.price}</p>
+                <p className="coupon-details">สั่งซื้อตั้งแต่ ฿{coupon.minOrder}</p>
+                <div className="divider"></div> {/* เส้นขีด */}
+                <p className="coupon-expiry">วันหมดอายุ: {coupon.expiryDate}</p>
+              </div>
+              {/* ปุ่มเก็บคูปอง */}
+              <button
+                className={`coupon-button ${collectedCoupons.includes(index) ? "used" : ""}`}
+                onClick={() => handleCollectCoupon(index)} // ส่ง index เป็น parameter
+                disabled={collectedCoupons.includes(index)} // ปิดการใช้งานปุ่มเมื่อถูกเก็บแล้ว
+              >
+                {collectedCoupons.includes(index) ? "ใช้ทันที" : "เก็บคูปอง"}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Promotion;

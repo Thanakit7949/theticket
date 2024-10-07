@@ -9,7 +9,7 @@ const NavigationBar = () => {
       <Link to="/sports" className="hover:text-red-500">กีฬา</Link>
       <Link to="/promotions" className="hover:text-red-500">โปรโมชั่น</Link>
       <Link to="/products" className="hover:text-red-500">สินค้า</Link>
-      <Link to="/news" className="hover:text-red-500">ข่าวสาร</Link>
+      <Link to="/information" className="hover:text-red-500">ข่าวสาร</Link>
     </nav>
   );
 };
