@@ -70,39 +70,39 @@ const Concerts = () => {
   const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด'); // สถานะสำหรับหมวดหมู่ที่ถูกเลือก
   // ข้อมูลคอนเสิร์ต
    const allConcerts = [
-    { img: cImage, title: "❤️‍🔥: 2024 ZEROBASEONE THE FIRST TOUR", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค เอ็กซิบิชั่น เมืองทองธานี" ,id:1},
-    { img: c1Image, title: "❤️‍🔥: 2024 YUGYEOM TOUR [TRUSTY] IN BANGKOK", date: "🗓️: 12 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,id:2},
-    { img: c2Image, title: "❤️‍🔥: POLYCAT VIRTUAL MEMORY CONCERT", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 12:00 น. - 23:00 น.", location: "📌: ธันเดอร์โดม เมืองทองธานี" ,id:3},
-    { img: c3Image, title: "❤️‍🔥: 2024 JIN YOUNG FANMEETING IN THAILAND", date: "🗓️: 14 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall",id:4 },
-    { img: c4Image, title: "❤️‍🔥: SUNSU Presents Sweet Sunshine With StangTari", date: "🗓️: 20 ตุลาคม 2567", time: "⏰: 14:00 - 20:00 น.", location: "📌: LIDO CONNECT HALL 2" ,id:5},
-    { img: c5Image, title: "❤️‍🔥: โอเอสเคเอ็น รียูเนี่ยน ปาร์ตี้ 2024", date: "🗓️: 26 ตุลาคม 2567", time: "⏰: 15:30 - 22:00 น.", location: "📌: โรงเรียนสวนกุหลาบวิทยาลัย นนทบุรี" ,id:6},
-    { img: c6Image, title: "❤️‍🔥: LONGLAY BEACH LIFE FESTIVAL 2024", date: "🗓️: 7-8 ธันวาคม 2567", time: "⏰: 14:00 - 23:59 น.", location: "📌: Diamond Beach (Longlay Beach)",id:7 },
+    { img: cImage, title: "❤️‍🔥: 2024 ZEROBASEONE THE FIRST TOUR", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค เอ็กซิบิชั่น เมืองทองธานี", price: 4500,id:1},
+    { img: c1Image, title: "❤️‍🔥: 2024 YUGYEOM TOUR [TRUSTY] IN BANGKOK", date: "🗓️: 12 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,price: 3500,id:2},
+    { img: c2Image, title: "❤️‍🔥: POLYCAT VIRTUAL MEMORY CONCERT", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 12:00 น. - 23:00 น.", location: "📌: ธันเดอร์โดม เมืองทองธานี" ,price: 5500,id:3},
+    { img: c3Image, title: "❤️‍🔥: 2024 JIN YOUNG FANMEETING IN THAILAND", date: "🗓️: 14 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall",price: 3500,id:4 },
+    { img: c4Image, title: "❤️‍🔥: SUNSU Presents Sweet Sunshine With StangTari", date: "🗓️: 20 ตุลาคม 2567", time: "⏰: 14:00 - 20:00 น.", location: "📌: LIDO CONNECT HALL 2" ,price: 2600,id:5},
+    { img: c5Image, title: "❤️‍🔥: โอเอสเคเอ็น รียูเนี่ยน ปาร์ตี้ 2024", date: "🗓️: 26 ตุลาคม 2567", time: "⏰: 15:30 - 22:00 น.", location: "📌: โรงเรียนสวนกุหลาบวิทยาลัย นนทบุรี" ,price: 4700,id:6},
+    { img: c6Image, title: "❤️‍🔥: LONGLAY BEACH LIFE FESTIVAL 2024", date: "🗓️: 7-8 ธันวาคม 2567", time: "⏰: 14:00 - 23:59 น.", location: "📌: Diamond Beach (Longlay Beach)",price: 2800,id:7 },
     { img: c7Image, title: "❤️‍🔥: Knock Knock Knock: BUS 1st THAILAND FANCON TOUR", date: "🗓️: วันอาทิตย์ที่ 6 ตุลาคม 2567", time: "⏰: 13.00 น.", location: "📌: เทอร์มินอล ฮอลล์, ศูนย์การค้าเทอร์มินอล 21 โคราช", soldOut: true },
-    { img: c8Image, title: "❤️‍🔥: PIT BABE 1st ANNIVERSARY (LEVEL UP) Presented by IN2IT", date: "🗓️: วันอาทิตย์ที่ 17 พฤศจิกายน 2567", time: "⏰: 18.00 น.", location: "📌: TRUE ICON HALL, 7th FLOOR, ICONSIAM" ,id:9},
-    { img: c9Image, title: "❤️‍🔥: TANATAT SOLO STAGE BIRTHDAY FAN MEETING: NIGHTMARE", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,id:10},
-    { img: c10Image, title: "❤️‍🔥: 2024 (G)I-DLE WORLD TOUR [iDOL] IN BANGKOK", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 18:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี",id:11 },
-    { img: c11Image, title: "❤️‍🔥: TATE MCRAE THINK LATER WORLD TOUR 2024", date: "🗓️: วันเสาร์ที่ 2 พฤศจิกายน 2567", time: "⏰: 19:00 น.", location: "📌: ยูโอบี ไลฟ์, เอ็มสเฟียร์" ,id:12},
+    { img: c8Image, title: "❤️‍🔥: PIT BABE 1st ANNIVERSARY (LEVEL UP) Presented by IN2IT", date: "🗓️: วันอาทิตย์ที่ 17 พฤศจิกายน 2567", time: "⏰: 18.00 น.", location: "📌: TRUE ICON HALL, 7th FLOOR, ICONSIAM" ,price: 5500,id:9},
+    { img: c9Image, title: "❤️‍🔥: TANATAT SOLO STAGE BIRTHDAY FAN MEETING: NIGHTMARE", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,price: 3900,id:10},
+    { img: c10Image, title: "❤️‍🔥: 2024 (G)I-DLE WORLD TOUR [iDOL] IN BANGKOK", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 18:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี",price: 4900,id:11 },
+    { img: c11Image, title: "❤️‍🔥: TATE MCRAE THINK LATER WORLD TOUR 2024", date: "🗓️: วันเสาร์ที่ 2 พฤศจิกายน 2567", time: "⏰: 19:00 น.", location: "📌: ยูโอบี ไลฟ์, เอ็มสเฟียร์" ,price: 5400,id:12},
   ];
   const thaiMassConcerts = [
-    { img: c2Image, title: "❤️‍🔥: POLYCAT VIRTUAL MEMORY CONCERT", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 12:00 น. - 23:00 น.", location: "📌: ธันเดอร์โดม เมืองทองธานี",id:2 },
-    { img: c5Image, title: "❤️‍🔥: โอเอสเคเอ็น รียูเนี่ยน ปาร์ตี้ 2024", date: "🗓️: 26 ตุลาคม 2567", time: "⏰: 15:30 - 22:00 น.", location: "📌: โรงเรียนสวนกุหลาบวิทยาลัย นนทบุรี",id:6 },
+    { img: c2Image, title: "❤️‍🔥: POLYCAT VIRTUAL MEMORY CONCERT", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 12:00 น. - 23:00 น.", location: "📌: ธันเดอร์โดม เมืองทองธานี",price: 3500,id:2 },
+    { img: c5Image, title: "❤️‍🔥: โอเอสเคเอ็น รียูเนี่ยน ปาร์ตี้ 2024", date: "🗓️: 26 ตุลาคม 2567", time: "⏰: 15:30 - 22:00 น.", location: "📌: โรงเรียนสวนกุหลาบวิทยาลัย นนทบุรี",price: 4700,id:6 },
     { img: c7Image, title: "❤️‍🔥: Knock Knock Knock: BUS 1st THAILAND FANCON TOUR", date: "🗓️: วันอาทิตย์ที่ 6 ตุลาคม 2567", time: "⏰: 13.00 น.", location: "📌: เทอร์มินอล ฮอลล์, ศูนย์การค้าเทอร์มินอล 21 โคราช", soldOut: true },
-    { img: c8Image, title: "❤️‍🔥: PIT BABE 1st ANNIVERSARY (LEVEL UP) Presented by IN2IT", date: "🗓️: วันอาทิตย์ที่ 17 พฤศจิกายน 2567", time: "⏰: 18.00 น.", location: "📌: TRUE ICON HALL, 7th FLOOR, ICONSIAM" ,id:9},
-    { img: c9Image, title: "❤️‍🔥: TANATAT SOLO STAGE BIRTHDAY FAN MEETING: NIGHTMARE", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,id:10},
+    { img: c8Image, title: "❤️‍🔥: PIT BABE 1st ANNIVERSARY (LEVEL UP) Presented by IN2IT", date: "🗓️: วันอาทิตย์ที่ 17 พฤศจิกายน 2567", time: "⏰: 18.00 น.", location: "📌: TRUE ICON HALL, 7th FLOOR, ICONSIAM" ,price: 5500,id:9},
+    { img: c9Image, title: "❤️‍🔥: TANATAT SOLO STAGE BIRTHDAY FAN MEETING: NIGHTMARE", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,price: 3900,id:10},
   ];
   const tpopConcerts = [
     { img: c7Image, title: "❤️‍🔥: Knock Knock Knock: BUS 1st THAILAND FANCON TOUR", date: "🗓️: วันอาทิตย์ที่ 6 ตุลาคม 2567", time: "⏰: 13.00 น.", location: "📌: เทอร์มินอล ฮอลล์, ศูนย์การค้าเทอร์มินอล 21 โคราช", soldOut: true },
   ];
   const kpopConcerts = [
-    { img: cImage, title: "❤️‍🔥: 2024 ZEROBASEONE THE FIRST TOUR", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค เอ็กซิบิชั่น เมืองทองธานี",id:1 },
-    { img: c1Image, title: "❤️‍🔥: 2024 YUGYEOM TOUR [TRUSTY] IN BANGKOK", date: "🗓️: 12 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,id:2},
-    { img: c3Image, title: "❤️‍🔥: 2024 JIN YOUNG FANMEETING IN THAILAND", date: "🗓️: 14 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,id:10},
-    { img: c4Image, title: "❤️‍🔥: SUNSU Presents Sweet Sunshine With StangTari", date: "🗓️: 20 ตุลาคม 2567", time: "⏰: 14:00 - 20:00 น.", location: "📌: LIDO CONNECT HALL 2" ,id:5},
-    { img: c10Image, title: "❤️‍🔥: 2024 (G)I-DLE WORLD TOUR [iDOL] IN BANGKOK", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 18:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,id:11},
+    { img: cImage, title: "❤️‍🔥: 2024 ZEROBASEONE THE FIRST TOUR", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค เอ็กซิบิชั่น เมืองทองธานี",price: 4500,id:1 },
+    { img: c1Image, title: "❤️‍🔥: 2024 YUGYEOM TOUR [TRUSTY] IN BANGKOK", date: "🗓️: 12 ตุลาคม 2567", time: "⏰: 10:00 น. - 22:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,price: 3500,id:2},
+    { img: c3Image, title: "❤️‍🔥: 2024 JIN YOUNG FANMEETING IN THAILAND", date: "🗓️: 14 ตุลาคม 2567", time: "⏰: 17:00 - 18:30 น.", location: "📌: Siam-Pic Ganesha Hall" ,price: 3900,id:10},
+    { img: c4Image, title: "❤️‍🔥: SUNSU Presents Sweet Sunshine With StangTari", date: "🗓️: 20 ตุลาคม 2567", time: "⏰: 14:00 - 20:00 น.", location: "📌: LIDO CONNECT HALL 2" ,price: 2600,id:5},
+    { img: c10Image, title: "❤️‍🔥: 2024 (G)I-DLE WORLD TOUR [iDOL] IN BANGKOK", date: "🗓️: วันเสาร์ที่ 19 ตุลาคม 2567", time: "⏰: 18:00 น.", location: "📌: อิมแพ็ค อารีน่า เมืองทองธานี" ,price: 4900,id:11},
   ];
   const interConcerts = [
-    { img: c6Image, title: "❤️‍🔥: LONGLAY BEACH LIFE FESTIVAL 2024", date: "🗓️: 7-8 ธันวาคม 2567", time: "⏰: 14:00 - 23:59 น.", location: "📌: Diamond Beach (Longlay Beach)" ,id:7},
-    { img: c11Image, title: "❤️‍🔥: TATE MCRAE THINK LATER WORLD TOUR 2024", date: "🗓️: วันเสาร์ที่ 2 พฤศจิกายน 2567", time: "⏰: 19:00 น.", location: "📌: ยูโอบี ไลฟ์, เอ็มสเฟียร์",id:12},
+    { img: c6Image, title: "❤️‍🔥: LONGLAY BEACH LIFE FESTIVAL 2024", date: "🗓️: 7-8 ธันวาคม 2567", time: "⏰: 14:00 - 23:59 น.", location: "📌: Diamond Beach (Longlay Beach)" ,price: 2800,id:7},
+    { img: c11Image, title: "❤️‍🔥: TATE MCRAE THINK LATER WORLD TOUR 2024", date: "🗓️: วันเสาร์ที่ 2 พฤศจิกายน 2567", time: "⏰: 19:00 น.", location: "📌: ยูโอบี ไลฟ์, เอ็มสเฟียร์",price: 5400,id:12},
   ];
   const displayedConcerts = currentCategory === 'ทั้งหมด' ? allConcerts 
     : currentCategory === 'THAI MASS' ? thaiMassConcerts 
@@ -110,8 +110,8 @@ const Concerts = () => {
     : currentCategory === 'K-POP' ? kpopConcerts
     : currentCategory === ' INTERNATIONAL' ? interConcerts
     : [];
-    const handleBuyTicket = (concertId) => {
-      navigate(`/buy-ticketCon/${concertId}`); // นำทางไปยังหน้าซื้อบัตร
+    const handleBuyTicket = (concert) => {
+      navigate(`/buy-ticketcon/${concert.id}`, { state: { concert } }); // ส่งข้อมูลทั้งหมดของ concert ไปยัง BuyTicket
     };
   
   return (
@@ -192,7 +192,7 @@ const Concerts = () => {
         {item.soldOut ? (
           <p className="sold-out-btn">Sold Out</p>
         ) : (
-          <button className="buy-ticket-btn" onClick={() => handleBuyTicket(item.id)}>ซื้อบัตร</button>
+          <button className="buy-ticket-btn" onClick={() => handleBuyTicket(item)}>ซื้อบัตร</button>
         )}
       </div>
     </div>

@@ -21,6 +21,7 @@ import PixxiConcert from './ComponentImage/PixxiConcert';
 import LyknConcert from './ComponentImage/LyknConcert';  
 import BuyTicketSport from './pages/BuyTicketSport'; 
 import BuyTicketCon from './pages/BuyTicketCon'; 
+import Promotion from './pages/Promotion'; 
 import './styles.css';
 
 const App = () => {
@@ -101,7 +102,8 @@ const App = () => {
         <div className="container mx-auto px-4 py-4">
           <Routes>
             <Route path="/" element={<ConcertList />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/products" element={<Products />} /> 
+            <Route path="/promotions" element={<Promotion />} /> 
             <Route path="/ReceiptProduct" element={<Receiptproduct />} />
             <Route path="/cart" element={<Cart />} /> 
             <Route path="/concerts" element={<Concerts />} />

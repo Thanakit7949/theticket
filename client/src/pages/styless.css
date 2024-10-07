@@ -1,144 +1,147 @@
-  /* CONCERT PAGE*/
+/* CONCERT PAGE*/
 
-  h4{
-    font-size: 18px;
-    color: black;
-  }
-  .concerts-page {
-  background: linear-gradient(to bottom right, #f3e5f5, #e69af3); /* ไล่สีม่วงพาสเทล */
+h4 {
+  font-size: 18px;
+  color: black;
+}
+.concerts-page {
+  background: linear-gradient(
+    to bottom right,
+    #f3e5f5,
+    #e69af3
+  ); /* ไล่สีม่วงพาสเทล */
   min-height: 100vh; /* ให้พื้นหลังคลุมทั้งหน้า */
   padding: 20px;
   text-align: center;
-  }
-  .concerts-page {
-    text-align: center; /* จัดตำแหน่งให้ข้อความทั้งหมดอยู่กลาง */
-  }
-  .concerts-page .video-description {
-    text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
-    font-size: 38px; /* ขนาดฟอนต์ */
-    font-weight: bold; /* ทำให้ฟอนต์หนา */
-    margin-top: 30px;
-    color: palevioletred;
-  }
-  .video-container {
-    margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างวีดีโอกับข้อความ */
-    margin-top: 30px;
-  }
-  .video-container iframe {
-    border-radius: 10px; /* มุมโค้ง */
-    width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-    max-width: 900px; /* กำหนดความกว้างสูงสุด */
-    height: 450px; /* กำหนดความสูง */
-  }
-  .image-container {
-    text-align: center;
-    margin: 10px;
-    position: relative; /* ให้ container เป็น position relative */
-    overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
-    
-  }
-  .black-text {
-    color: black !important;
-    font-weight: bold;
-  }
-  
-  .image {
-    width: 90%; /* ทำให้รูปภาพกว้างเต็มพื้นที่ของคอนเทนเนอร์ */
-    max-width: 1500px; /* กำหนดความกว้างสูงสุด */
-    height: auto; /* ให้ความสูงปรับตามสัดส่วนของความกว้าง */
-    display: block; /* ทำให้รูปภาพเป็นบล็อกเพื่อให้ใช้พื้นที่ตามที่กำหนด */
-    object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ทั้งหมด */
-    border-radius: 10px; /* ขอบโค้งมนสำหรับรูปภาพ */
-    margin: 0 auto; /* จัดให้ภาพอยู่กึ่งกลางคอนเทนเนอร์ */
-  }
-  
-  .image-gallery-navigation1 {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .image-gallery-navigation {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .image-gallery {
-    display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
-    justify-content: center; /* จัดกลางรูปภาพ */
-    margin-top: 20px; /* ระยะห่างระหว่างข้อความและรูปภาพ */
-  }
-  
-  .concerts-image {
-    width: 190px; /* ตั้งค่าความกว้างของรูปภาพ */
-    height: 150px; /* ตั้งค่าความสูงของรูปภาพ */
-    object-fit: cover; /* ครอบภาพเพื่อให้ไม่ผิดสัดส่วน */
-    border-radius: 8px; /* เพิ่มมุมโค้งให้กับรูปภาพ */
-    transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการ hover */
-  }
-  
-  .image-container:hover .concerts-image {
-    transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
-  }
-  .nav-button.prev {
-    position: absolute;
-    left: 0px;
-    background-color: gray;
-    border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
-    width: 40px; /* ความกว้างของปุ่ม */
-    height: 40px; /* ความสูงของปุ่ม */
-    padding: 0; /* เอาการเว้นระยะในปุ่มออก */
-    font-size: 16px; /* ขนาดตัวอักษร */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .nav-button.next {
-    position: absolute;
-    right: 5px;
-    background-color: gray;
-    border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
-    width: 40px; /* ความกว้างของปุ่ม */
-    height: 40px; /* ความสูงของปุ่ม */
-    padding: 0; /* เอาการเว้นระยะในปุ่มออก */
-    font-size: 16px; /* ขนาดตัวอักษร */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 1;
-  }
+}
+.concerts-page {
+  text-align: center; /* จัดตำแหน่งให้ข้อความทั้งหมดอยู่กลาง */
+}
+.concerts-page .video-description {
+  text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
+  font-size: 38px; /* ขนาดฟอนต์ */
+  font-weight: bold; /* ทำให้ฟอนต์หนา */
+  margin-top: 30px;
+  color: palevioletred;
+}
+.video-container {
+  margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างวีดีโอกับข้อความ */
+  margin-top: 30px;
+}
+.video-container iframe {
+  border-radius: 10px; /* มุมโค้ง */
+  width: 100%; /* ทำให้กว้างเต็มพื้นที่ของคอนเทนเนอร์ */
+  max-width: 900px; /* กำหนดความกว้างสูงสุด */
+  height: 450px; /* กำหนดความสูง */
+}
+.image-container {
+  text-align: center;
+  margin: 10px;
+  position: relative; /* ให้ container เป็น position relative */
+  overflow: hidden; /* ป้องกันไม่ให้รูปภาพเลื่อนออกจาก container */
+}
+.black-text {
+  color: black !important;
+  font-weight: bold;
+}
 
-  .gif-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .gif-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .gif-image {
-    max-width: 800%;
-    height: auto;
-  }
-  /* จัดสไตล์สำหรับหมวดหมู่ปุ่ม */
+.image {
+  width: 90%; /* ทำให้รูปภาพกว้างเต็มพื้นที่ของคอนเทนเนอร์ */
+  max-width: 1500px; /* กำหนดความกว้างสูงสุด */
+  height: auto; /* ให้ความสูงปรับตามสัดส่วนของความกว้าง */
+  display: block; /* ทำให้รูปภาพเป็นบล็อกเพื่อให้ใช้พื้นที่ตามที่กำหนด */
+  object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ทั้งหมด */
+  border-radius: 10px; /* ขอบโค้งมนสำหรับรูปภาพ */
+  margin: 0 auto; /* จัดให้ภาพอยู่กึ่งกลางคอนเทนเนอร์ */
+}
+
+.image-gallery-navigation1 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-gallery-navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-gallery {
+  display: flex; /* ใช้ Flexbox เพื่อจัดรูปภาพในแถว */
+  justify-content: center; /* จัดกลางรูปภาพ */
+  margin-top: 20px; /* ระยะห่างระหว่างข้อความและรูปภาพ */
+}
+
+.concerts-image {
+  width: 190px; /* ตั้งค่าความกว้างของรูปภาพ */
+  height: 150px; /* ตั้งค่าความสูงของรูปภาพ */
+  object-fit: cover; /* ครอบภาพเพื่อให้ไม่ผิดสัดส่วน */
+  border-radius: 8px; /* เพิ่มมุมโค้งให้กับรูปภาพ */
+  transition: transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการ hover */
+}
+
+.image-container:hover .concerts-image {
+  transform: scale(1.1); /* ขยายรูปภาพเมื่อวางเมาส์ */
+}
+.nav-button.prev {
+  position: absolute;
+  left: 0px;
+  background-color: gray;
+  border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
+  width: 40px; /* ความกว้างของปุ่ม */
+  height: 40px; /* ความสูงของปุ่ม */
+  padding: 0; /* เอาการเว้นระยะในปุ่มออก */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button.next {
+  position: absolute;
+  right: 5px;
+  background-color: gray;
+  border-radius: 50%; /* เปลี่ยนขอบเป็นวงกลม */
+  width: 40px; /* ความกว้างของปุ่ม */
+  height: 40px; /* ความสูงของปุ่ม */
+  padding: 0; /* เอาการเว้นระยะในปุ่มออก */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.gif-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif-image {
+  max-width: 800%;
+  height: auto;
+}
+/* จัดสไตล์สำหรับหมวดหมู่ปุ่ม */
 .category-buttons {
   display: flex;
   justify-content: center;
@@ -166,8 +169,8 @@
 
 .frames-row {
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกรอบในแนวนอน */
-  justify-content: start; 
-  margin:30px 0 ; /* ระยะห่างรอบกรอบ */
+  justify-content: start;
+  margin: 30px 0; /* ระยะห่างรอบกรอบ */
   flex-wrap: wrap; /* เพิ่มการห่อหุ้มกรอบเมื่อพื้นที่ไม่พอ */
 }
 .concert-frame {
@@ -179,9 +182,8 @@
   width: 33%; /* ความกว้างของกรอบ (ปรับตามต้องการ) */
   margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเคลื่อนไหว */
-
 }
-.concert-frame:hover{
+.concert-frame:hover {
   transform: scale(1.05); /* ขยายเมื่อ hover */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเด้ง */
   background-color: palevioletred;
@@ -194,38 +196,38 @@
   height: 160px;
 }
 .frame-text {
-  font-size: 12px; 
-  color: #333; 
-  margin-top: 5px; 
+  font-size: 12px;
+  color: #333;
+  margin-top: 5px;
 }
 
 .title {
-    font-weight: bold; 
-    color: black !important; /* ใช้ !important หากต้องการบังคับให้เป็นไปตามนี้ */
+  font-weight: bold;
+  color: black !important; /* ใช้ !important หากต้องการบังคับให้เป็นไปตามนี้ */
 }
 
 .date-time {
-    color: rgb(7, 206, 7) !important;
-    font-size: 15px; 
-    font-weight: bold;
+  color: rgb(7, 206, 7) !important;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .time {
-    color: rgb(0, 123, 255) !important; /* ใช้สีที่ต้องการ */
-    font-size: 15px; 
-    font-weight: bold;
+  color: rgb(0, 123, 255) !important; /* ใช้สีที่ต้องการ */
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .location {
-    color: blue !important; 
-    font-size: 15px; 
-    font-weight: bold;
+  color: blue !important;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .buy-ticket-btn {
   background-color: #ff3b30; /* สีพื้นหลังของปุ่ม */
   color: white;
-  padding:5px 30px;
+  padding: 5px 30px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -238,7 +240,6 @@
   background-color: #e63946; /* เปลี่ยนสีเมื่อ hover */
 }
 
-
 /* การจัดรูปแบบเพิ่มเติมสำหรับปุ่ม SOLD OUT */
 .sold-out-btn {
   background-color: gray; /* สีเทาสำหรับ SOLD OUT */
@@ -246,7 +247,6 @@
   opacity: 0.6; /* ทำให้โปร่งใสนิดหน่อย */
   font-size: 15px;
   border-radius: 25px;
-  
 }
 /* PAGE SPORT */
 .text-sports {
@@ -256,7 +256,11 @@
 }
 
 .sport-page {
-  background: linear-gradient(to bottom right, #effaf9, #aafaed); /* พื้นหลังไล่สีพาสเทล */
+  background: linear-gradient(
+    to bottom right,
+    #effaf9,
+    #aafaed
+  ); /* พื้นหลังไล่สีพาสเทล */
   padding: 40px;
   text-align: center;
   border-radius: 20px; /* ขอบโค้งมน */
@@ -283,7 +287,7 @@
 }
 
 .image-hover-container::before {
-  content: '';
+  content: "";
   display: block;
   padding-top: 56.25%; /* อัตราส่วน 16:9 เพื่อรักษาความสูงของคอนเทนเนอร์ */
 }
@@ -347,7 +351,11 @@
 
 /* เอฟเฟกต์การกระเด้ง */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0); /* เริ่มต้นที่ตำแหน่งเดิม */
   }
   40% {
@@ -409,7 +417,6 @@
   border-radius: 5px; /* ขอบโค้งมน */
 }
 
-
 .category-label {
   position: absolute;
   bottom: 10px;
@@ -420,7 +427,8 @@
   font-weight: bold;
   color: black !important;
   font-size: 15px;
-}.new-category-container {
+}
+.new-category-container {
   padding: 30px;
   background-color: #f0f0f5; /* สีพื้นหลังที่เป็นโทนเรียบ */
   border-radius: 10px;
@@ -463,8 +471,8 @@
 
 .frames-row-sport {
   display: flex; /* ใช้ Flexbox เพื่อจัดเรียงกรอบในแนวนอน */
-  justify-content: start; 
-  margin:30px 0 ; /* ระยะห่างรอบกรอบ */
+  justify-content: start;
+  margin: 30px 0; /* ระยะห่างรอบกรอบ */
   flex-wrap: wrap; /* เพิ่มการห่อหุ้มกรอบเมื่อพื้นที่ไม่พอ */
 }
 .sport-frame {
@@ -476,9 +484,8 @@
   width: 33%; /* ความกว้างของกรอบ (ปรับตามต้องการ) */
   margin-bottom: 20px; /* ระยะห่างระหว่างแถว */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มการเคลื่อนไหว */
-
 }
-.sport-frame:hover{
+.sport-frame:hover {
   transform: scale(1.05); /* ขยายเมื่อ hover */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเพื่อให้ดูเด้ง */
   background-color: rgb(112, 216, 216); /* เปลี่ยนสีพื้นหลัง */
@@ -515,9 +522,15 @@
   border: 1px solid white; /* ขอบเมื่อเลือก */
 }
 @keyframes waveEffect {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .new-image-container:hover img {
@@ -532,95 +545,95 @@
   padding: 20px;
 }
 .concert-details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%; 
-    max-width: 800px; 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
 }
 
 .image1 {
-    flex: 1;
-    margin-right: 20px; 
+  flex: 1;
+  margin-right: 20px;
 }
 
 .concert-image-large {
-    width: 100%; 
-    border-radius: 10px; 
+  width: 100%;
+  border-radius: 10px;
 }
 
 .frame-text1 {
-    flex: 2; 
-    text-align: left; 
+  flex: 2;
+  text-align: left;
 }
 
 .title1 {
-    font-size: 28px; /* เพิ่มขนาดฟอนต์ */
-    font-weight: bold;
-    margin-bottom: 10px; 
+  font-size: 28px; /* เพิ่มขนาดฟอนต์ */
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.date-time1{
-  font-size: 16px; 
-  margin: 5px 0; 
+.date-time1 {
+  font-size: 16px;
+  margin: 5px 0;
   text-align: left; /* จัดให้อยู่ซ้าย */
   color: rgb(7, 206, 7);
 }
-.time1{
-  font-size: 16px; 
-  margin: 5px 0; 
+.time1 {
+  font-size: 16px;
+  margin: 5px 0;
   text-align: left; /* จัดให้อยู่ซ้าย */
   color: rgb(0, 123, 255); /* ใช้สีที่ต้องการ */
 }
 .location1 {
-  font-size: 16px; 
-  margin: 5px 0; 
+  font-size: 16px;
+  margin: 5px 0;
   text-align: left; /* จัดให้อยู่ซ้าย */
   color: blue;
 }
 
 .ticket-info {
-  margin-top: 20px; 
+  margin-top: 20px;
   text-align: left; /* จัดให้อยู่ซ้าย */
 }
 .icon {
-    margin-right: 5px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
+  margin-right: 5px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
 }
 .price-button-container {
-    display: flex; 
-    justify-content: space-between; /* จัดให้อยู่ที่ปลายทั้งสองด้าน */
-    align-items: center; 
-    margin-top: 160px; /* เพิ่มช่องว่างด้านบนเพื่อให้ขยับลงมาข้างล่าง */
-    padding: 10px; 
-    border: 1px solid #ccc; /* กรอบ */
-    border-radius: 30px; /* มุมโค้งมน */
-    background-color: #f9f9f9; /* สีพื้นหลังกรอบ */
-    width: 100%; /* ความกว้าง 100% ของคอนเทนเนอร์พ่อ */
-    max-width: 1200px; /* ขยายความกว้างสูงสุด */
-    margin-left: auto;  
-    margin-right: auto; 
+  display: flex;
+  justify-content: space-between; /* จัดให้อยู่ที่ปลายทั้งสองด้าน */
+  align-items: center;
+  margin-top: 120px; /* เพิ่มช่องว่างด้านบนเพื่อให้ขยับลงมาข้างล่าง */
+  padding: 10px;
+  border: 1px solid #ccc; /* กรอบ */
+  border-radius: 30px; /* มุมโค้งมน */
+  background-color: #f9f9f9; /* สีพื้นหลังกรอบ */
+  width: 100%; /* ความกว้าง 100% ของคอนเทนเนอร์พ่อ */
+  max-width: 1200px; /* ขยายความกว้างสูงสุด */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .price {
-  font-size: 17px; 
-  font-weight: bold; 
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .buy-ticket-btn1 {
-  padding: 10px 20px; 
-  background-color: red; 
-  color: white; 
-  border: none; 
-  border-radius: 30px; 
-  cursor: pointer; 
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 .buy-ticket-btn1:hover {
-  padding: 10px 20px; 
-  background-color: rgb(0, 255, 255); 
-  color: white; 
-  border-radius: 30px; 
-  border:1px solid rgb(8, 144, 207)
+  padding: 10px 20px;
+  background-color: rgb(0, 255, 255);
+  color: white;
+  border-radius: 30px;
+  border: 1px solid rgb(8, 144, 207);
 }
-.sport{
+.sport {
   color: red !important;
   font-size: 30px;
   font-weight: bold;
@@ -628,7 +641,11 @@
 
 /* BUYTICKET CONCERT*/
 .concert-page {
-  background: linear-gradient(to bottom right, #f3e5f5, #e69af3); /* ไล่สีม่วงพาสเทล */
+  background: linear-gradient(
+    to bottom right,
+    #f3e5f5,
+    #e69af3
+  ); /* ไล่สีม่วงพาสเทล */
   padding: 40px;
   text-align: center;
   border-radius: 20px; /* ขอบโค้งมน */
@@ -636,36 +653,524 @@
   margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
 }
 .buy-ticket-btn2 {
-  padding: 10px 20px; 
-  background-color: red; 
-  color: white; 
-  border: none; 
-  border-radius: 30px; 
-  cursor: pointer; 
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
 }
 .buy-ticket-btn2:hover {
-  padding: 10px 20px; 
-  background-color: rgb(252, 99, 183); 
-  color: white; 
-  border-radius: 30px; 
-  border:1px solid rgb(207, 8, 147)
+  padding: 10px 20px;
+  background-color: rgb(252, 99, 183);
+  color: white;
+  border-radius: 30px;
+  border: 1px solid rgb(207, 8, 147);
 }
 .price-button-container1 {
-  display: flex; 
+  display: flex;
   justify-content: space-between; /* จัดให้อยู่ที่ปลายทั้งสองด้าน */
-  align-items: center; 
+  align-items: center;
   margin-top: 120px; /* เพิ่มช่องว่างด้านบนเพื่อให้ขยับลงมาข้างล่าง */
-  padding: 10px; 
+  padding: 10px;
   border: 1px solid #ccc; /* กรอบ */
   border-radius: 30px; /* มุมโค้งมน */
   background-color: #f9f9f9; /* สีพื้นหลังกรอบ */
   width: 100%; /* ความกว้าง 100% ของคอนเทนเนอร์พ่อ */
   max-width: 1200px; /* ขยายความกว้างสูงสุด */
-  margin-left: auto;  
-  margin-right: auto; 
+  margin-left: auto;
+  margin-right: auto;
 }
-.concert{
+.concert {
   color: red !important;
   font-size: 30px;
   font-weight: bold;
 }
+/* PROMOTION*/
+.promotion-page {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #f3e5f5, #faa7de);
+  position: relative; /* เพื่อใช้กับตำแหน่งของกล่อง Flash Sale */
+}
+
+.promotion-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+  color: #ad054b !important;
+}
+.promotion-subtitle {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #e63946 !important;
+}
+.flash-sale-box {
+  position: absolute; /* กำหนดตำแหน่งเพื่อให้อยู่ด้านซ้าย */
+  top: 20px; /* ปรับตามต้องการ */
+  left: 20px; /* ปรับตามต้องการ */
+  background-color: #ffcc00; /* สีพื้นหลังของ Flash Sale */
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.image-container-pro {
+  display: flex;
+  justify-content: center; /* จัดกลางภาพ */
+  margin: 20px 0; /* เว้นพื้นที่รอบภาพ */
+}
+.pro-image {
+  max-width: 1000px; /* กำหนดความกว้างสูงสุดให้กับภาพ */
+  width: 100%; /* ทำให้ภาพตอบสนองต่อขนาด */
+  border-radius: 10px; /* มุมโค้งของภาพ */
+}
+.dot-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px; /* ความสูงของจุด */
+  width: 10px; /* ความกว้างของจุด */
+  margin: 0 5px; /* เว้นพื้นที่ระหว่างจุด */
+  background-color: white; /* สีพื้นหลังของจุด */
+  border-radius: 50%; /* ทำให้จุดเป็นรูปกลม */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ที่จุด */
+  transition: background-color 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนสี */
+}
+
+.dot.active {
+  background-color: #ad054b; /* สีของจุดที่ถูกเลือก */
+}
+.image-caption-box {
+  border: 2px solid #ad054b; /* กรอบรอบคำบรรยาย */
+  border-radius: 10px; /* มุมโค้ง */
+  padding: 10px; /* เว้นพื้นที่ภายใน */
+  margin-top: 20px; /* เว้นพื้นที่ด้านบน */
+  background-color: rgb(255, 214, 231);
+}
+
+.caption-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-caption {
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+  color: #ad054b !important;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.time-caption {
+  font-size: 1.8rem;
+  color: #6d0430 !important;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+  margin-left: 50px;
+}
+
+.frame-promotion {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  background-color: white;
+  position: relative; /* ใช้ relative เพื่อให้ลูกของกรอบสามารถจัดตำแหน่งได้ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 300px; /* กำหนดขนาดความกว้างของแต่ละกล่อง */
+  min-height: 350px; /* ปรับความสูงให้เหมาะสม */
+}
+
+.frame-promotion:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pro-image {
+  max-width: 100%;
+  max-height: 70%;
+  border-radius: 5px;
+}
+
+.promotion-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #ad054b !important;
+  text-align: center;
+  position: relative; /* ใช้สำหรับจัดตำแหน่ง */
+  padding-bottom: 15px; /* เว้นระยะด้านล่าง */
+  width: 100%; /* ให้มีความกว้างเต็มกรอบ */
+}
+
+.promotion-text::after {
+  content: ""; /* ใช้สำหรับสร้างเส้น */
+  position: absolute;
+  left: 0; /* เริ่มจากซ้าย */
+  right: 0; /* จบที่ขวา */
+  bottom: 0; /* อยู่ด้านล่าง */
+  height: 2px; /* ความหนาของเส้น */
+  background-color: #ad054b; /* สีของเส้น */
+  width: 100%; /* ให้ยาวเต็มกรอบ */
+  margin: 0; /* ไม่มีการปรับระยะขอบ */
+}
+
+.discount-label {
+  position: absolute;
+  top: 10px; /* ระยะห่างจากด้านบน */
+  left: 10px; /* ระยะห่างจากด้านซ้าย */
+  background-color: #ff4d4d; /* สีพื้นหลังของป้ายลดราคา */
+  color: white; /* สีตัวอักษร */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  font-weight: bold;
+  padding: 5px 10px; /* ระยะห่างภายใน */
+  border-radius: 5px; /* มุมโค้งของป้าย */
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* จัดให้ชิดด้านซ้าย */
+  width: 100%; /* ทำให้กินพื้นที่ทั้งหมดของคอนเทนเนอร์ */
+  margin-left: 20px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.new-price {
+  color: #ad054b;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.promo-dates {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #555 !important; /* สีเทาสำหรับข้อความวันโปร */
+  display: flex;
+  align-items: center;
+}
+.promotion-container {
+  display: flex; /* จัดเลย์เอาต์แนวนอนสำหรับรายการโปรโมชัน */
+  overflow-x: auto; /* ทำให้สามารถเลื่อนในแนวนอนได้ */
+  white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+  gap: 20px; /* ระยะห่างระหว่างแต่ละโปรโมชัน */
+  padding: 10px;
+  width: 100%; /* ให้ container กว้างเต็มที่ */
+  margin-top: 20px; /* ระยะห่างระหว่างกรอบคำบรรยายกับโปรโมชัน */
+}
+.image-caption-box1 {
+  border: 2px solid #ad054b; /* กรอบรอบคำบรรยาย */
+  border-radius: 20px 20px 0 0; /* มุมโค้งเฉพาะด้านบนซ้ายและด้านบนขวา */
+  padding: 10px; /* เว้นพื้นที่ภายใน */
+  margin-top: 50px; /* เว้นพื้นที่ด้านบน */
+  display: flex; /* เพิ่มการจัดแนวแนวตั้ง */
+  justify-content: center; /* จัดแนวกลางในแนวนอน */
+  align-items: center; /* จัดแนวกลางในแนวตั้ง */
+  position: relative; /* เพิ่ม position สำหรับการเลื่อนของลูกค้าใหม่ */
+  background: linear-gradient(
+    to right,
+    #f85599 40%,
+    rgba(255, 255, 255, 0) 60%
+  );
+}
+
+.caption-container1 {
+  display: flex;
+  align-items: flex-start; /* จัดแนวที่ด้านบน */
+  gap: 10px; /* เพิ่มช่องว่างระหว่างรูปภาพและข้อความ */
+}
+
+.customer-image {
+  width: 150px; /* ขนาดของรูปภาพ */
+  height: 150px; /* ขนาดของรูปภาพ */
+  margin-top: -40px; /* เลื่อนรูปภาพขึ้นเหนือกรอบ */
+}
+
+.image-caption1 {
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255) !important;
+  color: #ad054b !important;
+  margin: 0;
+  border-radius: 10px; /* เพิ่มมุมโค้งสำหรับข้อความ */
+  padding: 5px; /* เพิ่มพื้นที่ภายในสำหรับข้อความ */
+  margin-top: -25px; /* เลื่อนรูปภาพขึ้นเหนือกรอบ */
+  margin-left: 50px;
+}
+.discount-message {
+  font-size: 20px; /* ขนาดข้อความของส่วนลด */
+  color: #ad054b; /* สีข้อความ */
+  text-align: center; /* จัดแนงข้อความกลาง */
+  font-weight: bold;
+  margin-top: 30px; /* เว้นระยะห่างด้านบน */
+  margin-left: -250px;
+}
+
+.grow {
+  animation: grow 0.5s forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1); /* ขนาดเริ่มต้น */
+  }
+  100% {
+    transform: scale(1.5); /* ขยายขนาดเป็น 1.5 เท่า */
+  }
+}
+.image-caption-box2 {
+  border: 2px solid #ad054b; /* กรอบรอบกล่อง */
+  border-radius: 0 0 20px 20px; /* มุมโค้งเฉพาะด้านล่าง */
+  padding: 10px; /* เว้นระยะภายใน */
+  margin-top: 5px; /* เว้นพื้นที่ด้านบน */
+  background-color: rgb(255, 213, 251);
+  display: flex;
+  flex-direction: column; /* ทำให้เนื้อหาภายในวางเรียงกันในแนวตั้ง */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.image-caption-box3 {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 5px;
+  background: linear-gradient(to left, white 70%, #db055e 30%);
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 120%;
+  position: relative;
+  /* เพิ่มความเงา */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3),
+    /* เงาด้านนอก */ inset 0 1px 3px rgba(255, 255, 255, 0.3); /* เงาด้านใน */
+}
+
+.image-caption2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255) !important;
+  color: white !important;
+  margin: 0;
+  padding: 5px; /* เพิ่มพื้นที่ภายในสำหรับข้อความ */
+  margin-top: 5px; /* เลื่อนรูปภาพขึ้นเหนือกรอบ */
+  margin-left: 50px; /* เว้นระยะห่างด้านซ้าย */
+}
+.image-caption3 {
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* จัดเรียงในแนวตั้ง */
+  align-items: flex-start; /* จัดแนวไปที่ด้านซ้าย */
+  margin: 0;
+  padding: 5px; /* เพิ่มพื้นที่ภายในสำหรับข้อความ */
+  margin-top: -35px; /* เลื่อนรูปภาพขึ้นเหนือกรอบ */
+  margin-left: 70px; /* เว้นระยะห่างด้านซ้าย */
+}
+
+.discount-container {
+  display: flex; /* ใช้ Flexbox */
+  align-items: flex-end; /* จัดแนวให้ "50%" และ "Off" อยู่ที่ด้านล่าง */
+  font-size: 50px; /* ขนาดฟอนต์สำหรับ 50% */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+  color: black !important;
+  margin-top: 20px;
+}
+
+.discount-label1 {
+  font-size: 20px; /* ขนาดฟอนต์ที่เล็กกว่า */
+  margin-left: 5px; /* เว้นระยะห่างระหว่าง 50% กับ Off */
+  margin-top: 5px; /* สามารถปรับเพื่อเลื่อน Off ลงไปเล็กน้อย */
+  color: black !important; /* สีฟอนต์ที่ต้องการ */
+}
+
+.additional-text {
+  font-size: 20px; /* ปรับขนาดฟอนต์สำหรับข้อความเพิ่มเติม */
+  color: black !important; /* สีฟอนต์ที่ต้องการ */
+}
+.image-cutomer-box {
+  border: 2px solid #ad054b; /* กรอบรอบคำบรรยาย */
+  border-radius: 5px; /* มุมโค้ง */
+  padding: 5px; /* เว้นพื้นที่ภายใน */
+  background-color: rgb(255, 214, 231);
+  margin-top: 10px;
+}
+
+.cutomer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cutomer-caption {
+  font-size: 16px;
+  color: #ad054b !important;
+  margin: 0;
+}
+.buy-customer {
+  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+  color: white;
+  padding: 5px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 35px;
+  margin-top: 10px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
+  align-self: center; /* จัดปุ่มอยู่กลางในแนวตั้ง */
+  margin-left: auto; /* ให้ปุ่มอยู่ทางขวา */
+  transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อเปลี่ยนสี */
+}
+
+.buy-customer:hover {
+  background-color: #c9006e; /* เปลี่ยนสีเมื่อ hover ก่อนใช้คูปอง */
+}
+
+/* เมื่อใช้คูปองแล้ว เปลี่ยนสีปุ่มเป็นสีฟ้าอ่อน */
+.buy-customer.used {
+  background-color: #18c3fc; /* สีฟ้าอ่อน */
+}
+.promotion {
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
+  color: #da0387 !important;
+  margin-top: 20px;
+}
+.promotion-box {
+  border-radius: 5px; /* มุมโค้ง */
+  padding: 15px; /* เว้นพื้นที่ภายใน */
+  background-color: #ffefef;
+  margin-top: 10px;
+}
+
+.promotion-container-customer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promotion-caption {
+  font-size:30px;
+  color: black !important;
+  font-weight: bold;
+}
+.buy-customer1 {
+  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+  color: white;
+  padding: 5px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 10px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
+  align-self: center; /* จัดปุ่มอยู่กลางในแนวตั้ง */
+  margin-left: auto; /* ให้ปุ่มอยู่ทางขวา */
+  transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อเปลี่ยนสี */
+}
+
+.buy-customer1:hover {
+  background-color: #c9006e; /* เปลี่ยนสีเมื่อ hover ก่อนใช้คูปอง */
+}
+
+ /* เก็บคูปอง */
+ .coupon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.coupon-card {
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 480px;
+  padding: 15px;
+  margin: 10px;
+  background-color: #fff !important;
+  
+}
+
+.coupon-content {
+  display: flex;
+  align-items: center; /* จัดกลางในแนวตั้ง */
+}
+
+.coupon-image {
+  width: 120px;
+  height: 140px;
+  margin-right: 10px; /* เว้นระยะห่างระหว่างรูปภาพและข้อความ */
+}
+
+.coupon-text {
+  display: flex;
+  flex-direction: column; /* ข้อความจะเรียงจากบนลงล่าง */
+}
+
+.coupon-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0066 !important;
+  margin : 5px 0;
+  margin-left: -100px;
+}
+
+.coupon-details{
+  font-size: 16px;
+  color: #333 !important;
+  margin: 5px 0; /* เว้นระยะห่างระหว่างข้อความ */
+  margin-left: -40px;
+}
+.coupon-expiry {
+  font-size: 16px;
+  color: #a5a5a5 !important;
+  margin: 5px 0; /* เว้นระยะห่างระหว่างข้อความ */
+  margin-top: 10px;
+}
+
+.divider {
+  height: 1px; /* ความสูงของเส้น */
+  background-color: #a5a5a5; /* สีของเส้น */
+  width: 28%; /* ทำให้เส้นยาวเต็มที่ */
+  margin: 5px 0; /* ระยะห่างด้านบนและล่าง */
+  position: absolute; /* ทำให้สามารถควบคุมตำแหน่งได้ */
+  margin-top: 8%;
+}
+
+
+.coupon-button {
+  background-color: #ff0066 !important;
+  color: white !important;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: -50px;
+  margin-left: 25px;
+}
+
+.coupon-button:hover {
+  background-color: #ff6699 !important;
+}
+
+.coupon-button.used {
+  background-color: #2ab2d4 !important; /* เปลี่ยนเป็นสีฟ้าอ่อนเมื่อใช้คูปองแล้ว */
+}
+

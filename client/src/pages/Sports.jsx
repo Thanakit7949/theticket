@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 import './styless.css';
 import sportImage from '../assets/sports.jpg';
 import sport1Image from '../assets/sports1.jpg';
@@ -21,40 +21,42 @@ import s6Image from '../assets/s6.png';
 import s7Image from '../assets/s7.png'; 
 
 const Sports = () => {
-  const navigate = useNavigate(); // สร้าง instance ของ navigate
+  const navigate = useNavigate();
   const [currentCategory, setCurrentCategory] = useState('ทั้งหมด');
-  const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด'); // สถานะสำหรับหมวดหมู่ที่ถูกเลือก
+  const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด');
+
   // ข้อมูลคอนเสิร์ต
-   const allSports = [
-    { img: s1Image, title: "❤️‍🔥: ONE LUMPINEE", date: "🗓️: วันศุกร์ที่ 12 มกราคม 2567", time: "⏰:  19:30 น.", location: "📌: สนามมวยเวทีลุมพินี", id: 1 },
-    { img: s2Image, title: "❤️‍🔥: MUANGTHONG UNITED", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 18.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม", id: 2 },
-    { img: s3Image, title: "❤️‍🔥: MUANGTHONG UNITED Thai League Matchday", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 20.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม", id: 3 },
-    { img: s4Image, title: "❤️‍🔥: Muangthong United AFC Champions League Two", date: "🗓️: วันพฤหัสบดีที่ 5 ธันวาคม 2567", time: "⏰: 19.00 น.", location: "📌: สนามราชมังคลากีฬาสถาน", id: 4 },
-    { img: s5Image, title: "❤️‍🔥: ONE Fight Night 25 : Nicolas vs. Eersel II", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 07.00 น.", location: "📌: สนามมวยเวทีลุมพินี", id: 5 },
-    { img: s6Image, title: "❤️‍🔥: ฟุตบอลชิงถ้วยพระราชทาน คิงส์คัพ ครั้งที่ 50 ประจำปี 2567", date: "🗓️: วันศุกร์ที่ 11 ตุลาคม 2567", time: "⏰: 16.30 น.", location: "📌: สนามกีฬาติณสูลานนท์", id: 6 },
-    { img: s7Image, title: "❤️‍🔥: ASEAN Mitsubishi Electric Cup 2024", date: "🗓️: วันอังคารที่ 15 ตุลาคม 2567", time: "⏰: 19.30 น.", location: "📌: Chonburi stadium", id: 7 },
+  const allSports = [
+    { img: s1Image, title: "❤️‍🔥: ONE LUMPINEE", date: "🗓️: วันศุกร์ที่ 12 มกราคม 2567", time: "⏰:  19:30 น.", location: "📌: สนามมวยเวทีลุมพินี", price: 500, id: 1 },
+    { img: s2Image, title: "❤️‍🔥: MUANGTHONG UNITED", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 18.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม",price: 700, id: 2 },
+    { img: s3Image, title: "❤️‍🔥: MUANGTHONG UNITED Thai League Matchday", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 20.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม",price: 600, id: 3 },
+    { img: s4Image, title: "❤️‍🔥: Muangthong United AFC Champions League Two", date: "🗓️: วันพฤหัสบดีที่ 5 ธันวาคม 2567", time: "⏰: 19.00 น.", location: "📌: สนามราชมังคลากีฬาสถาน",price: 1700, id: 4 },
+    { img: s5Image, title: "❤️‍🔥: ONE Fight Night 25 : Nicolas vs. Eersel II", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 07.00 น.", location: "📌: สนามมวยเวทีลุมพินี",price: 1500, id: 5 },
+    { img: s6Image, title: "❤️‍🔥: ฟุตบอลชิงถ้วยพระราชทาน คิงส์คัพ ครั้งที่ 50 ประจำปี 2567", date: "🗓️: วันศุกร์ที่ 11 ตุลาคม 2567", time: "⏰: 16.30 น.", location: "📌: สนามกีฬาติณสูลานนท์",price: 1300, id: 6 },
+    { img: s7Image, title: "❤️‍🔥: ASEAN Mitsubishi Electric Cup 2024", date: "🗓️: วันอังคารที่ 15 ตุลาคม 2567", time: "⏰: 19.30 น.", location: "📌: Chonburi stadium", price: 2800,id: 7 },
   ];
   const boxingSports = [
-    { img: s1Image, title: "❤️‍🔥: ONE LUMPINEE", date: "🗓️: วันศุกร์ที่ 12 มกราคม 2567", time: "⏰:  19:30 น.", location: "📌: สนามมวยเวทีลุมพินี",id:1 },
-    { img: s5Image, title: "❤️‍🔥: ONE Fight Night 25 : Nicolas vs. Eersel II", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 07.00 น.", location: "📌: สนามมวยเวทีลุมพินี" ,id:5 },
+    { img: s1Image, title: "❤️‍🔥: ONE LUMPINEE", date: "🗓️: วันศุกร์ที่ 12 มกราคม 2567", time: "⏰:  19:30 น.", location: "📌: สนามมวยเวทีลุมพินี",price: 500, id: 1 },
+    { img: s5Image, title: "❤️‍🔥: ONE Fight Night 25 : Nicolas vs. Eersel II", date: "🗓️: วันเสาร์ที่ 5 ตุลาคม 2567", time: "⏰: 07.00 น.", location: "📌: สนามมวยเวทีลุมพินี",price: 1500, id: 5 },
     ];
   const ballSports = [
     { img: s2Image, title: "❤️‍🔥: MUANGTHONG UNITED", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 18.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม" ,id:2},
-    { img: s3Image, title: "❤️‍🔥: MUANGTHONG UNITED Thai League Matchday", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 20.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม" ,id:3},
-    { img: s4Image, title: "❤️‍🔥: Muangthong United AFC Champions League Two", date: "🗓️: วันพฤหัสบดีที่ 5 ธันวาคม 2567", time: "⏰: 19.00 น.", location: "📌: สนามราชมังคลากีฬาสถาน",id:4 },
+    { img: s3Image, title: "❤️‍🔥: MUANGTHONG UNITED Thai League Matchday", date: "🗓️: วันอาทิตย์ที่ 18 สิงหาคม 2567", time: "⏰: 20.00 น.", location: "📌: ธันเดอร์โดม สเตเดี้ยม" ,price: 600,id:3},
+    { img: s4Image, title: "❤️‍🔥: Muangthong United AFC Champions League Two", date: "🗓️: วันพฤหัสบดีที่ 5 ธันวาคม 2567", time: "⏰: 19.00 น.", location: "📌: สนามราชมังคลากีฬาสถาน",price: 1700,id:4 },
   ];
   const otherSports = [
-    { img: s6Image, title: "❤️‍🔥: ฟุตบอลชิงถ้วยพระราชทาน คิงส์คัพ ครั้งที่ 50 ประจำปี 2567", date: "🗓️: วันศุกร์ที่ 11 ตุลาคม 2567", time: "⏰: 16.30 น.", location: "📌: สนามกีฬาติณสูลานนท์" ,id:6},
-    { img: s7Image, title: "❤️‍🔥: ASEAN Mitsubishi Electric Cup 2024", date: "🗓️: วันอังคารที่ 15 ตุลาคม 2567", time: "⏰: 19.30 น.", location: "📌: Chonburi stadium" ,id:7},
+    { img: s6Image, title: "❤️‍🔥: ฟุตบอลชิงถ้วยพระราชทาน คิงส์คัพ ครั้งที่ 50 ประจำปี 2567", date: "🗓️: วันศุกร์ที่ 11 ตุลาคม 2567", time: "⏰: 16.30 น.", location: "📌: สนามกีฬาติณสูลานนท์" ,price: 1300,id:6},
+    { img: s7Image, title: "❤️‍🔥: ASEAN Mitsubishi Electric Cup 2024", date: "🗓️: วันอังคารที่ 15 ตุลาคม 2567", time: "⏰: 19.30 น.", location: "📌: Chonburi stadium" ,price: 2800,id:7},
      ];
+
   const displayedConcerts = currentCategory === 'ทั้งหมด' ? allSports 
     : currentCategory === 'BOXING' ? boxingSports 
     : currentCategory === 'FOOTBALL' ? ballSports 
     : currentCategory === 'OTHER' ? otherSports
     : [];
 
-    const handleBuyTicket = (SportId) => {
-      navigate(`/buy-ticketSport/${SportId}`); // นำทางไปยังหน้าซื้อบัตร
+    const handleBuyTicket = (sport) => {
+      navigate(`/buy-ticketsport/${sport.id}`, { state: { sport } }); // ส่งข้อมูลทั้งหมดของ concert ไปยัง BuyTicket
     };
   return (
     <div className="sport-page">
@@ -145,7 +147,7 @@ const Sports = () => {
 
 {/* เฟรมที่มีภาพและข้อความ */}
 <div className="frames-row-sport">
-        {displayedConcerts.map((item, index) => (
+    {displayedConcerts.map((item, index) => (
     <div className="sport-frame" key={index}>
       <img src={item.img} alt={`Frame ${index + 1}`} className="frame-image" />
       <div className="frame-text">
@@ -156,7 +158,7 @@ const Sports = () => {
         {item.soldOut ? (
           <p className="sold-out-btn">Sold Out</p>
         ) : (
-          <button className="buy-ticket-btn" onClick={() => handleBuyTicket(item.id)}>ซื้อบัตร</button>
+          <button className="buy-ticket-btn" onClick={() => handleBuyTicket(item)}>ซื้อบัตร</button>
         )}
       </div>
     </div>
