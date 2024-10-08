@@ -166,6 +166,7 @@ const Promotion = () => {
     setCollectedCoupons((prev) => [...prev, index]);
   };
 
+  //การแสดงจุด
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -195,10 +196,10 @@ const Promotion = () => {
   };
 
   return (
-    <div className="promotion-page">
-      <h1 className="promotion-title">PROMOTION 🎉</h1>
+    <div className="promotions-page">
+      <h1 className="promotions-title">PROMOTION 🎉</h1>
       <p className="promotion-subtitle">
-        ᴇɴᴊᴏʏ ᴇxᴄʟᴜꜱɪᴠᴇ เมื่อซื้อสินค้าครบตามที่กำหนดรับไปเลยส่วนลด 50%!
+        ᴇɴᴊᴏʏ ᴇxᴄʟᴜꜱɪᴠᴇ เมื่อซื้อสินค้าครบตามที่กำหนดรับไปเลยส่วนลด!
       </p>
 
       {/* แสดงภาพปัจจุบัน */}
@@ -251,7 +252,7 @@ const Promotion = () => {
             </div>
           </div>
           <button
-            className={`buy-customer ${isUsed ? "used" : ""}`}
+            className={`buys-customer ${isUsed ? "used" : ""}`}
             onClick={handleButtonClick}
           >
             {buttonText}
@@ -273,7 +274,7 @@ const Promotion = () => {
       <div className="promotion-box">
         <div className="promotion-container-customer">
           <p className="promotion-caption">เติมคูปอง ทุกเที่ยงคืน 00.00 น.</p>
-          <button className="buy-customer1">
+          <button className="buys-customer1">
             <Link
               to="/conditions"
               style={{ textDecoration: "none", color: "inherit" }}

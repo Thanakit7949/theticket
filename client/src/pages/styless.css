@@ -652,6 +652,30 @@ h4 {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* เงา */
   margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
 }
+.promotions-page {
+  background: linear-gradient(
+    to bottom right,
+    #e6f7f8,
+    #ffb2e5
+  ); /* ไล่สีม่วงพาสเทล */
+  min-height: 100vh; /* ให้พื้นหลังคลุมทั้งหน้า */
+  padding: 20px;
+  text-align: center;
+}
+.promotions-title{
+  font-size: 3.1rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(255, 255, 255) !important;
+  color: rgb(207, 8, 147) !important;
+  margin: 0;
+  padding: 5px; /* เพิ่มพื้นที่ภายในสำหรับข้อความ */
+  margin-top: 5px; /* เลื่อนรูปภาพขึ้นเหนือกรอบ */
+  margin-left: 50px; /* เว้นระยะห่างด้านซ้าย */
+}
+.promotion-subtitle{
+  color: red !important;
+  margin-bottom: 10px;
+}
 .buy-ticket-btn2 {
   padding: 10px 20px;
   background-color: red;
@@ -680,6 +704,26 @@ h4 {
   max-width: 1200px; /* ขยายความกว้างสูงสุด */
   margin-left: auto;
   margin-right: auto;
+}
+.buys-customer  {
+  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+  color: white;
+  padding: 15px 50px; /* ปรับขนาด padding ให้ใหญ่ขึ้น */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
+  margin-top: 52px; /* เว้นระยะห่างระหว่างข้อความและปุ่ม */
+  align-self: flex-start; /* จัดปุ่มให้อยู่ด้านซ้าย */
+ margin-left: 150px;
+}
+.buys-customer:hover  {
+  background-color: #ad054b !important; /* เปลี่ยนสีเมื่อ hover */
+}
+
+.buys-customer.used {
+  background-color: #4aabc3 !important; /* สีพื้นหลังใหม่เมื่อใช้แล้ว */
+  padding: 15px 55px; /* ปรับขนาด padding ให้ใหญ่ขึ้น */
 }
 .concert {
   color: red !important;
@@ -719,7 +763,38 @@ h4 {
   margin-top: 20px; /* เว้นพื้นที่ด้านบน */
   background-color: rgb(255, 214, 231);
 }
+.promotion-box {
+  border-radius: 10px; /* มุมโค้ง */
+  padding: 10px; /* เว้นพื้นที่ภายใน */
+  margin-top: 10px; /* เว้นพื้นที่ด้านบน */
+  background-color: #fffcfc;
+  margin-bottom: 10px;
+}
+.promotion-container-customer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.promotion-caption {
+  font-size: 30px;
+  color: black !important;
+  margin: 0;
+  font-weight: bold;
+}
+.buys-customer1  {
+  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+  color: white;
+  padding: 15px 50px; /* ปรับขนาด padding ให้ใหญ่ขึ้น */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
+  align-self: flex-start; /* จัดปุ่มให้อยู่ด้านซ้าย */
+}
+.buys-customer1:hover  {
+  background-color: #ad054b !important; /* เปลี่ยนสีเมื่อ hover */
+}
 .caption-container {
   display: flex;
   justify-content: space-between;
@@ -992,8 +1067,8 @@ h4 {
   color: #ad054b !important;
   margin: 0;
 }
-.buy-customer {
-  background-color: #fc0e71; /* สีพื้นหลังของปุ่มก่อนใช้คูปอง */
+
+
 .sidebar a {
   color: white;
   text-decoration: none;
@@ -1156,5 +1231,90 @@ h4 {
   border-radius: 10px; /* ขอบโค้งมนสำหรับรูปภาพ */
   margin: 0 auto; /* จัดให้ภาพอยู่กึ่งกลางคอนเทนเนอร์ */
   margin-top: 50px;
+}
+.dot-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #c000a6;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ffffff;
+}
+.coupon-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+  gap: 20px; /* ระยะห่างระหว่างการ์ดคูปอง */
+}
+
+.coupon-card {
+  border: 2px solid #ff4081; /* กรอบสีชมพูพาสเทล */
+  border-radius: 10px; /* มุมโค้งมน */
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+  display: flex;
+  align-items: center;
+}
+.coupon-content {
+  display: flex;
+  justify-content: space-between; /* จัดตำแหน่งให้ช่องว่างระหว่างข้อความและปุ่ม */
+  align-items: center; /* ทำให้ข้อความและปุ่มอยู่ในบรรทัดเดียวกัน */
+}
+.coupon-image {
+  width: 100px; /* กำหนดขนาดรูปภาพ */
+  height: auto;
+  margin-right: 15px; /* ระยะห่างระหว่างรูปภาพและข้อความ */
+}
+
+.coupon-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.coupon-price{
+  color: rgb(223, 27, 148)  !important;
+  font-weight: bold;
+  margin-left: -150px;
+}
+.coupon-details{
+  color: black !important;
+  margin-left: -50px;
+}
+.coupon-expiry{
+  color: #ccc !important;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 8px 0;
+}
+
+.coupon-button {
+  padding: 10px 15px;
+  background-color: #ff4081; /* สีชมพูพาสเทล */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 70px;
+}
+.coupon-button:hover  {
+  background-color: #ad054b !important; /* เปลี่ยนสีเมื่อ hover */
+}
+.coupon-button.used {
+  background-color: #4aabc3 !important; /* สีพื้นหลังใหม่เมื่อใช้แล้ว */
+  padding: 10px 25px;
 }
 
