@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ul>
-        <li><Link to="/profile">โปรไฟล์</Link></li>
+        <li><Link to="/user/profile">โปรไฟล์</Link></li>
         <li><Link to="/concerts">คอนเสิร์ต</Link></li>
         <li><Link to="/sports">กีฬา</Link></li>
         {/* เพิ่มเมนูเพิ่มเติมตามที่คุณต้องการ */}
