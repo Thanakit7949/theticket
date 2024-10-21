@@ -24,7 +24,7 @@ import BuyTicketSport from './pages/BuyTicketSport';
 import BuyTicketCon from './pages/BuyTicketCon'; 
 import Promotion from './pages/Promotion'; 
 import CouponPromotion from './pages/CouponPromotion'; 
-import Ex from './pages/ex'; 
+import Stage from './pages/stage'; 
 
 import './styles.css';
 
@@ -115,6 +115,7 @@ const App = () => {
             <Route path="/sports" element={<Sports />} />
             <Route path="/buy-ticketsport/:id" element={<BuyTicketSport />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรกีฬา */}
             <Route path="/buy-ticketCon/:id" element={<BuyTicketCon />} /> {/* เส้นทางสำหรับหน้าซื้อบัตรคอนเสิร์ต */}
+            <Route path="/stage" element={<Stage />} />
             <Route path="/conditions" element={<CouponPromotion />} />
             <Route path="/busconcert" element={<BusConcert />} />
             <Route path="/got7concert" element={<Got7Concert />} />
@@ -127,7 +128,7 @@ const App = () => {
             <Route path="/booking/:concertId" element={<Booking />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/ex" element={<Ex />} />
+
           </Routes>
         </div>
       </div>

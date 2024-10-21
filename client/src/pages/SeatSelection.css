@@ -1,0 +1,266 @@
+/* จัดหน้าหลัก */
+.seat-selection-page {
+    display: flex;
+    height: 100vh;
+    background: linear-gradient(
+        to bottom right,
+        #f3e5f5,
+        #fc8bad
+      ); /* ไล่สีม่วงพาสเทล */
+    color: black;
+    font-size: 17px;
+  }
+  
+  /* จัดการส่วนของตัวเลือกที่นั่ง */
+  .seat-options {
+    width: 40%;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 2px solid #333;
+  }
+  
+  .price-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Add gap to create spacing between buttons */
+    margin-bottom: 20px;
+  }
+  
+  .price-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: #f818c8;
+    cursor: pointer;
+    flex: 1; /* Ensure buttons take equal space */
+  }
+  
+  
+  .seat-list {
+    margin-top: 20px;
+  }
+  
+  .seat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  .seat-price{
+    color:red;
+    font-weight: bold;
+  }
+  .seat-item:hover {
+    background-color: white;
+  }
+  
+  .seat-type {
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .seat-type.pink {
+    background-color: #ff66cc; /* สีชมพูอ่อน */
+  }
+  
+  .seat-type.yellow {
+    background-color: #ffcc00; /* สีเหลือง */
+  }
+  
+  .seat-type.lightblue {
+    background-color: #87CEFA; /* สีฟ้าอ่อน */
+  }
+  
+  .seat-type.darkblue {
+    background-color: #00008B; /* สีฟ้าเข้ม */
+  }
+  .pink-btn {
+    background-color: #87CEFA; /* สีฟ้าอ่อน */
+  }
+  
+  
+  .yellow-btn {
+    background-color: #ffcc00; /* สีเหลือง */
+  }
+  
+  .lightblue-btn {
+    background-color: #87CEFA; /* สีฟ้าอ่อน */
+  }
+  
+  .darkblue-btn {
+    background-color: #00008B; /* สีฟ้าเข้ม */
+  }
+  
+  
+  /* จัดการส่วนของแผนผังที่นั่ง */
+  .seating-map {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .countdown {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .countdown-time {
+    color: red ;
+    font-weight: bold;
+  }
+  
+  .map-placeholder {
+    border: 2px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .seating-image {
+    width: 70%;
+    height: auto;
+  }
+  .map-placeholder {
+    border: 2px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    text-align: center; /* จัดกลางข้อความ */
+  }
+  
+  .stage {
+    margin-bottom: 20px; /* ระยะห่างระหว่างเวทีและแผนผังที่นั่ง */
+    padding: 20px; /* เพิ่มพื้นที่รอบ ๆ ตัวอักษร */
+    border: 3px solid #000; /* เส้นขอบใหญ่ */
+    border-radius: 10px; /* ขอบมน */
+    background-color: #fc8bad;
+  }
+  .seats-border {
+    position: relative; /* ใช้ตำแหน่งสัมพัทธ์ */
+    display: flex;
+    flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
+    align-items: center; /* จัดกลางในแนวแกนหลัก */
+    width: 100%; /* ความกว้างของกรอบ */
+    padding: 20px; /* ระยะห่างภายในกรอบ */
+    border: 0; /* ไม่ให้มีเส้นขอบรอบกรอบ */
+    border-bottom: 5px solid #000; /* เส้นขอบด้านล่าง */
+    border-radius: 0 0 100px 100px; /* กรอบครึ่งวงกลมที่ด้านล่าง */
+    background-color: rgba(255, 255, 255, 0.5); /* สีพื้นหลังกรอบ */
+    margin-top: 20px; /* ระยะห่างระหว่างเวทีและกรอบ */
+  }
+  
+  .stage-label {
+    font-size: 36px; /* ขนาดตัวอักษรสำหรับ STAGE */
+    font-weight: bold; /* ตัวหนา */
+
+  }
+  .seats-under-stage {
+    display: flex;
+    justify-content: center; /* จัดกลางที่นั่ง */
+    margin-top: 10px; /* ระยะห่างระหว่างเวทีและที่นั่ง */
+}
+
+.seat {
+    padding: 20px; /* ขนาด padding สำหรับที่นั่ง */
+    background-color: #ffcccb; /* สีพื้นหลังสำหรับที่นั่ง (ชมพูอ่อน) */
+    border-radius: 5px;
+    text-align: center; /* จัดกลางข้อความ */
+    margin: 0 15px; /* ระยะห่างระหว่างที่นั่ง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    width: 150px; /* กำหนดความกว้างของที่นั่ง */
+    transition: transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงสำหรับการแปลง */
+}
+
+.seat:hover {
+    transform: translateY(-10px); /* ยกที่นั่งขึ้นเมื่อเลื่อนเมาส์ไปที่ที่นั่ง */
+}
+
+.corner-left {
+    transform: skewY(10deg); /* เอียง AA1 ให้หันไปทางเวที */
+}
+
+.center {
+    margin-top: 20px; /* ขยับ AA2 ลงมาจาก AA1 */
+    padding: 20px; /* ขนาด padding สำหรับ AA2 */
+    width: 150px; /* ความกว้างของ AA2 เท่ากับ AA1 และ AA3 */
+}
+
+.corner-right {
+    transform: skewY(-10deg); /* เอียง AA3 ให้หันไปทางเวที */
+}
+
+.seatt {
+    padding: 20px; /* ขนาด padding สำหรับที่นั่ง */
+    background-color: #fffccb; /* สีพื้นหลังสำหรับที่นั่ง (ชมพูอ่อน) */
+    border-radius: 5px;
+    text-align: center; /* จัดกลางข้อความ */
+    margin: 0 15px; /* ระยะห่างระหว่างที่นั่ง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    width: 150px; /* กำหนดความกว้างของที่นั่ง */
+    transition: transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงสำหรับการแปลง */
+}
+
+.seatt:hover {
+    transform: translateY(-10px); /* ยกที่นั่งขึ้นเมื่อเลื่อนเมาส์ไปที่ที่นั่ง */
+}
+
+.seattt {
+    padding: 20px; /* ขนาด padding สำหรับที่นั่ง */
+    background-color: #cbefff; /* สีพื้นหลังสำหรับที่นั่ง (ชมพูอ่อน) */
+    border-radius: 5px;
+    text-align: center; /* จัดกลางข้อความ */
+    margin: 0 15px; /* ระยะห่างระหว่างที่นั่ง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    width: 150px; /* กำหนดความกว้างของที่นั่ง */
+    transition: transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงสำหรับการแปลง */
+}
+
+.seattt:hover {
+    transform: translateY(-10px); /* ยกที่นั่งขึ้นเมื่อเลื่อนเมาส์ไปที่ที่นั่ง */
+}
+
+.seattt.center1 {
+    padding: 20px; /* ขนาด padding สำหรับที่นั่ง */
+    background-color: #3b48ff; /* สีพื้นหลังสำหรับที่นั่ง */
+    border-radius: 5px 5px 50px 50px; /* มุมโค้งด้านล่างซ้ายและขวาเพิ่มขึ้น */
+    text-align: center; /* จัดกลางข้อความ */
+    margin: 0 15px; /* ระยะห่างระหว่างที่นั่ง */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    width: 500px; /* กำหนดความกว้างของที่นั่งให้ยาวขึ้น */
+    height: 60px; /* กำหนดความสูงให้มากขึ้น */
+    margin-top: 30px; /* ระยะห่างด้านบน */
+    transition: transform 0.3s ease; /* เอฟเฟกต์การเปลี่ยนแปลงสำหรับการแปลง */
+}
+
+.seattt.center1:hover {
+    transform: translateY(-10px); /* ยกที่นั่งขึ้นเมื่อเลื่อนเมาส์ไปที่ที่นั่ง */
+}
+.numberr{
+    background-color: #fc8bad;
+    border: 1px solid rgb(255, 0, 234);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    color: #f3e5f5;
+}
+
+   
+
+
+
+  
+  
+  
+  
+
+  
