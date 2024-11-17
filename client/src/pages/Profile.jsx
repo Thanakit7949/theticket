@@ -11,43 +11,42 @@ const Profile = () => {
     birth_date: '',
     gender: '',
   });
-
   const [isLoading, setIsLoading] = useState(true);
   const [image, setImage] = useState(null); // State สำหรับภาพโปรไฟล์
 
   useEffect(() => {
-    const savedProfile = JSON.parse(localStorage.getItem('profile'));
     const savedUser = JSON.parse(localStorage.getItem('user'));
 
-    if (savedProfile) {
-      setProfile(savedProfile);
-      setImage(savedProfile.profile_image); // โหลด URL ของภาพจากโปรไฟล์ที่เก็บไว้
-      setIsLoading(false);
-    } else if (savedUser && savedUser.id) {
-      axios.get(`http://localhost:3001/users/${savedUser.id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      })
-        .then(res => {
-          const userData = res.data;
-
-          // แปลงวันที่ในโปรไฟล์ให้เข้ากับฟอร์แมตของ HTML input[type="date"]
-          if (userData.birth_date) {
-            userData.birth_date = formatDate(userData.birth_date);
-          }
-
-          setProfile(userData);
-          setImage(userData.profile_image); // โหลด URL ของภาพโปรไฟล์จากฐานข้อมูล
-          setIsLoading(false);
-        })
-        .catch(err => {
-          console.error('Error fetching profile:', err);
-          setIsLoading(false);
-        });
+    if (savedUser && savedUser.id) {
+      fetchUserProfile(savedUser.id); // ดึงข้อมูลผู้ใช้ใหม่ทุกครั้งเมื่อ id เปลี่ยน
     } else {
       setIsLoading(false);
     }
-  }, []);
-  
+  }, []); // useEffect นี้จะเรียกใช้เมื่อ component mount เท่านั้น
+
+  // ดึงข้อมูลโปรไฟล์ของผู้ใช้ตาม id
+  const fetchUserProfile = (userId) => {
+    axios.get(`http://localhost:3001/users/${userId}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    })
+      .then(res => {
+        const userData = res.data;
+
+        // แปลงวันที่ในโปรไฟล์ให้เข้ากับฟอร์แมตของ HTML input[type="date"]
+        if (userData.birth_date) {
+          userData.birth_date = formatDate(userData.birth_date);
+        }
+
+        setProfile(userData);
+        setImage(userData.profile_image); // โหลด URL ของภาพโปรไฟล์จากฐานข้อมูล
+        setIsLoading(false);
+      })
+      .catch(err => {
+        console.error('Error fetching profile:', err);
+        setIsLoading(false);
+      });
+  };
+
   const formatDate = (isoDate) => {
     const date = new Date(isoDate);
     const year = date.getFullYear();
@@ -96,7 +95,6 @@ const Profile = () => {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       alert('Profile updated successfully!');
-      localStorage.setItem('profile', JSON.stringify(profile));
     } catch (error) {
       console.error('Update failed:', error);
     }

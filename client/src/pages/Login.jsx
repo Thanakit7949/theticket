@@ -32,11 +32,11 @@ const Login = ({ setUser }) => {
         // ทำการอัปเดต state ของ user
         setUser(user);
 
-        // นำทางผู้ใช้ไปยังหน้าที่เหมาะสมตาม role
+        // นำทางผู้ใช้ไปยังหน้าที่เหมาะสมตาม role และ ID
         if (user.role === 'admin') {
-          navigate('/admin');
+          navigate(`/admin/${user.id}`);
         } else if (user.role === 'user') {
-          navigate('/');
+          navigate(`/user/${user.id}`);
         } else {
           console.error('Invalid user role');
         }
@@ -47,6 +47,18 @@ const Login = ({ setUser }) => {
       console.error('Login failed:', error);
       setError('Login failed. Please try again.');
     }
+  };
+
+  const handleLogout = () => {
+    // Clear token and user data from localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
+    // Clear user state
+    setUser(null);
+
+    // Redirect to login page
+    navigate('/login');
   };
 
   return (
@@ -103,6 +115,11 @@ const Login = ({ setUser }) => {
           <span>หากคุณยังไม่เป็นสมาชิก</span>
           <ModalWrapper />
         </div>
+        
+        {/* ปุ่มล็อกเอ้าท์ */}
+        <button onClick={handleLogout} className="logout-button">
+          ล็อกเอ้าท์
+        </button>
       </div>
     </div>
   );
